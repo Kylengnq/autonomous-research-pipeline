@@ -1,7 +1,6 @@
 ---
 name: idea-pilot
 description: "Small-sample feasibility pilot: on the themed path it screens every variant before any debate; on the swarm path it runs on any card whose debate ended with no KILL vote. Verifies the data are actually obtainable (registered download script or extract query on a slice), counts coverage and treatment variation, sanity-checks the key measure, and produces power/MDE inputs for pre-registration. Reasons over the quantity the design needs rather than the field it named, so a negative verdict must first show one alternative construction it considered and why that fails — verdicts are feasible / conditional / construction-open / unmeasured / access-blocked, plus infeasible-unchecked when no alternative was considered, which is never terminal. The run's usability threshold is one declared constant printed in every report; every reported count carries the literal expression that produced it and is re-executed by the harness; every count carrying a terminal verdict or a menu number is derived twice by independent expressions and a disagreement blocks the verdict. Firewalled from the headline effect: never estimates it; any unavoidable sight of it triggers a mandatory disclosure flag for pre-register."
-disable-model-invocation: true
 ---
 
 # Idea Pilot (F3)
@@ -16,6 +15,17 @@ Read `pipeline-config.md` first: `ideas_dir`, `registry_file`,
 anchored`). Harness survival rules bind
 (absolute paths, single-threaded rate-limited APIs, checkpoint files;
 `playbooks/error-escalation.md`).
+
+
+## When to use
+
+Driven by `run-pipeline` inside S1b: on the themed path before the debate, on
+the swarm path after the debate gate. The author may name it directly to retest
+feasibility after a data source changes.
+
+Run it only on cards that have cleared the cheaper layers. It executes code
+against real sources and is the most expensive thing in the funnel per card,
+which is why the sequencing puts it behind the screens that kill for free.
 
 ## Entry gate (machine)
 

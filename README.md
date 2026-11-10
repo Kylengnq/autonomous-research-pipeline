@@ -12,7 +12,7 @@ frozen in git before the first estimate ran.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Runs%20on-Claude%20Code-orange)](https://docs.anthropic.com/en/docs/claude-code)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776ab)](https://www.python.org/)
-[![Gate fixtures](https://img.shields.io/badge/gate%20fixtures-100-brightgreen)](gate-fixtures/)
+[![Gate fixtures](https://img.shields.io/badge/gate%20fixtures-104-brightgreen)](gate-fixtures/)
 
 [Why](#why-this-exists) · [Responsible use](#responsible-use) · [How it works](#how-it-works) · [Quick start](#quick-start) · [Does it work](#does-it-work) · [Cost](#what-a-run-costs) · [Not included](#what-is-not-in-here)
 
@@ -141,17 +141,19 @@ git clone https://github.com/Kylengnq/autonomous-research-pipeline.git
 cd autonomous-research-pipeline && python3 gate-fixtures/run_fixtures.py
 ```
 
-That second command is deliberately before anything else. It runs 100 fixtures
-against the bundled skills and should print 100 passing. Do that before you
+That second command is deliberately before anything else. It runs 104 fixtures
+against the bundled skills and should print 104 passing. Do that before you
 trust a word of the rest of this file.
 
 ```bash
 cp -r project-template my-paper && cd my-paper
 ```
 
-Open `pipeline-config.md` and set three keys: `project_name`, `theme` (one
-sentence saying what area you want ideas in), and `usable_min`. Every skill
-reads that file first, and no skill hardcodes a path. Then hand over control:
+Open `pipeline-config.md` and set `project_name`, `theme` (one sentence saying
+what area you want ideas in), `usable_min`, and the three model tiers, which
+ship as placeholders. `SETUP.md` section 3 covers the rest, including the
+wall-clock budget you want before any unattended run. Every skill reads that
+file first, and no skill hardcodes a path. Then hand over control:
 
 ```
 /run-pipeline
@@ -165,11 +167,12 @@ ARCHIVED with a documented reject, or DONE.
 
 The honest answer is that the gates are tested and the papers are few.
 
-**The gates are tested.** `gate-fixtures/` holds 100 fixtures across 12
+**The gates are tested.** `gate-fixtures/` holds 104 fixtures across 13
 checkers. Each one plants a specific defect a machine gate must catch, or a clean
 case it must let through, in both directions, because a check that fires on
-everything is as useless as one that never fires. Two fixtures caught real
-defects in the gates on the days they were written, which is the only evidence
+everything is as useless as one that never fires. Three fixtures caught real defects on the days they were
+written, the most recent of them the one that found `/run-pipeline` could not
+enter its own stages, which is the only evidence
 that the suite is doing anything. Run it after changing a skill: if a gate lost a
 property, a fixture names which.
 
@@ -221,6 +224,22 @@ a finance set, so it will mis-score an idea from another field.
 set used for idea scoring, including the construct it substitutes for and the
 gaps it carries.
 
+## Known issues
+
+**The skills and the submission hooks cannot both load in one session.** The
+skills and the search backend resolve from the repository root; the hooks
+register only when the paper project is the session's own directory. Run from
+the root, which is what the quick start does, and keep the contribution record
+with `/log-conversation` and `/log-human-time` instead. `SETUP.md` section 4 has
+the detail. The failure is silent in one direction, so it is worth knowing.
+
+**A first cold run of this repository stopped before G1** and produced the fixes
+in it. Four funnel skills carried `disable-model-invocation: true`, which made
+them unreachable by `/run-pipeline`, the entry point this README advertises.
+That is fixed, and `gate-fixtures/` now carries a reachability check so it
+cannot recur silently. The run reached S0 and stopped at S1; a full funnel run
+to G1 has not been completed against this published tree.
+
 ## Layout
 
 | Path | What it is |
@@ -229,7 +248,7 @@ gaps it carries.
 | `workflow/` | The stage map. `pipeline-design.md` is canonical, `pipeline-guide.md` is the readable tour |
 | `references/` | Shared inputs the skills read: the calibration set, writing norms, journal standards |
 | `tools/` | Cost accounting, gate-document rendering, and the literature search backend |
-| `gate-fixtures/` | The 100 planted-failure fixtures |
+| `gate-fixtures/` | The 104 planted-failure fixtures |
 | `project-template/` | Copy this per paper |
 | `docs/` | The per-skill writing spec, for extending the pipeline |
 

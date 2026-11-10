@@ -34,12 +34,12 @@ AI-driven commit lets the contribution report key off the trailer and lets versi
 3. Write the message: a one-line summary, then a short body listing stage + deliverables.
 4. Append the `Co-Authored-By: Claude <noreply@anthropic.com>` trailer for AI-driven work.
 5. Commit. If this is a milestone, `git tag` it.
-6. Note the commit/tag in.
+6. Note the commit/tag in `notes/lab_notebook.md`.
 
 ## Outputs
 
 - A commit (optional tag) on the current branch.
-- A pointer.
+- A `notes/lab_notebook.md` pointer.
 
 ## Validation
 

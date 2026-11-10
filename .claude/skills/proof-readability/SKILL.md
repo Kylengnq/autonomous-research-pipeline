@@ -132,4 +132,4 @@ Also run the general `references/banned-words.md` pass; no em dashes anywhere.
   byte-for-byte equivalent in content.
 - If a real gap surfaced, do not edit around it: flag it as a `[MATERIAL GAP]` and route the proof
   back to `math-proof`.
-- Append a dated entry to noting the readability pass and any routed-back gap.
+- Append a dated entry to `notes/lab_notebook.md` noting the readability pass and any routed-back gap.

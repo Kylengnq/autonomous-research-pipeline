@@ -194,7 +194,7 @@ opportunity.
 
 ### Phase 5: Log and output
 
-**Lab notebook**: Append an entry to:
+**Lab notebook**: Append an entry to `notes/lab_notebook.md`:
 
 ```markdown
 ---

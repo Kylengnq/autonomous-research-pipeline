@@ -1,7 +1,6 @@
 ---
 name: idea-variants
 description: "Funnel layer F1-T (themed path): turns one general theme into 8-12 deliberate versions of it, varied along mechanism, outcome variable, identification strategy, and unit of observation, so the design space of a single question is covered rather than a topic space searched. Reserves 2-3 theme-blind cells as a control against the theme itself being wrong. Runs after F0-narrowed and before the up-front feasibility pilot; issues no scores and no ranks. In data_mode: anchored every variant carries verified anchor fields and a data capability digest whose every line carries its counts. Replaces idea-swarm plus idea-scoring when pipeline-config.md sets a theme."
-disable-model-invocation: true
 ---
 
 # Idea Variants (F1-T, themed path)
@@ -13,6 +12,18 @@ Runs when `pipeline-config.md` sets `theme`; `idea-swarm` and
 Read `pipeline-config.md` first: `theme`, `ideas_dir`, `idea_pool`,
 `field_profile`, `gate_mode`, `model_default`, `data_mode` (plus
 `data_profile` and `peek_log` when `data_mode: anchored`).
+
+
+## When to use
+
+Driven by `run-pipeline` as stage S1 on the themed path, or named directly by
+the author to regenerate a variant set after a re-theme. Not a brainstorming
+tool: it expands one `theme` sentence into deliberate variants against a fixed
+cell plan, and its output is a pool for F2, not a menu for a reader.
+
+Do not run it when `theme` is unset. The swarm path (`idea-swarm` then
+`idea-scoring`) is the generator in that case, and running both produces two
+pools that no later layer knows how to reconcile.
 
 ## Why this is not the swarm with a topic attached
 

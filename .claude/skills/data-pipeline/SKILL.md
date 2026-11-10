@@ -62,14 +62,14 @@ avoidable.
 4. **Poll, then merge.** Check sentinels; merge partials into the panel; record coverage (% of
    universe with non-null outcome) and known parse failures (e.g. table-based 10-K filers mis-parse).
 5. **Validate and document.** Spot-check a few known firms by hand, winsorize obvious extraction
-   noise, and write a short data-readiness note to `output/` plus a entry.
+   noise, and write a short data-readiness note to `output/` plus a `notes/lab_notebook.md` entry.
 
 ## Outputs
 
 - The pipeline scripts under `scripts/` (extractor, shard runner, orchestrator, merge).
 - The assembled panel under `data/` and a coverage/caveats note under `output/`.
 - Sentinels under `data/raw/` recording completion.
-- A entry.
+- A `notes/lab_notebook.md` entry.
 
 ## Validation
 

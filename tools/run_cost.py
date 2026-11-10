@@ -391,9 +391,33 @@ def print_outcomes(layers: dict, spec: dict) -> None:
           "verify it came first.")
 
 
+def join_leading_dash_values(argv):
+    """Let `--project -Users-me-thing` work, not just `--project=-Users-me-thing`.
+
+    Every Claude Code project slug starts with `-`, because it is the absolute
+    path with separators replaced. argparse reads the next token as a flag and
+    fails with "expected one argument", so the space-separated form of this
+    option could never work for any real slug. Rewriting the pair into the `=`
+    form before parsing costs nothing and removes a trap that is invisible
+    until you hit it.
+    """
+    out, i = [], 0
+    while i < len(argv):
+        a = argv[i]
+        if a in ("--project", "--outcomes") and i + 1 < len(argv) and argv[i + 1].startswith("-"):
+            out.append(f"{a}={argv[i + 1]}")
+            i += 2
+            continue
+        out.append(a)
+        i += 1
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--project", help="project directory slug under ~/.claude/projects")
+    ap.add_argument("--project", help="project directory slug under ~/.claude/projects "
+                                      "(slugs start with '-'; both --project X and "
+                                      "--project=X work)")
     ap.add_argument("--session", help="one session id or unique prefix")
     ap.add_argument("--since", help="only sessions modified on/after YYYY-MM-DD")
     ap.add_argument("--json", action="store_true", help="machine-readable output")
@@ -401,7 +425,7 @@ def main() -> int:
                     help="JSON file declaring, per layer, what counted as a "
                          "success and how many there were; adds cost per "
                          "success and the incremental cost of an arm")
-    args = ap.parse_args()
+    args = ap.parse_args(join_leading_dash_values(sys.argv[1:]))
 
     if args.project:
         root = os.path.join(PROJECTS, args.project)

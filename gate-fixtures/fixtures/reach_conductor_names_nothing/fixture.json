@@ -1,0 +1,14 @@
+{
+  "gate": "stage reachability (the conductor can enter what it names)",
+  "defect_class": "the check is pointed at a tree where it can assert nothing and reports OK",
+  "expect": "fail",
+  "must_mention": [
+    "names no stage skill"
+  ],
+  "cmd": [
+    "{python}",
+    "{checkers}/reachability_check.py",
+    "--skills-root",
+    "skills"
+  ]
+}

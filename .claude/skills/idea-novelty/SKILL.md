@@ -1,18 +1,29 @@
 ---
 name: idea-novelty
 description: "Funnel layer F3 step 1.5: the contribution judge. Asks the question the occupancy audit cannot — not *has someone done this design* but *what would we learn, from which theory, and does that theory have supportive evidence yet*. Four blocks per surviving card: the literature strand the empirical question joins; the theoretical prediction it bears on, on an established/contested/untested/none ladder where `untested` must name the observability barrier and carry the searches that failed; an outcome-conditional contribution table stating what the paper says under the predicted sign, a null, and a reversal, where no live cell is a terminal contribution-null; and verification of the card's generator-asserted displacement hunch against the target's actual claim. Searches the mechanism's literature rather than the theme's, which is how the occupancy pass misses a paper occupying the design in a different asset class. Verdicts PROCEED / REFRAME / CONTRIBUTION-NULL; the kill is the only irreversible verdict and needs a second independent confirmer, may never rest on a TITLE-ONLY citation, and is audited by the decision audit under defect class 7. Output is judgment-bearing and quarantined; factual corrections route into novelty_facts.md."
-disable-model-invocation: true
 ---
 
 # Idea Novelty (F3, step 1.5)
 
-The contribution judge (S1b). Runs only when
-explicitly invoked, after the desk simulation and **before the debate**.
+The contribution judge (S1b). Runs after the desk simulation and **before the
+debate**, driven by the conductor or named by the author.
 
 Read `pipeline-config.md` first: `theme`, `ideas_dir`, `field_profile`,
 `gate_mode`, `model_strong`, `paper_set`/`search_log` keys, `data_mode`.
 All judgment roles run on `model_strong`. Escalation per
 `playbooks/error-escalation.md`.
+
+
+## When to use
+
+Driven by `run-pipeline` as the step 1.5 contribution judge inside S1b, after
+the desk simulation and before the debate. The author may also name it directly
+to re-judge a card whose positioning changed.
+
+Order matters and is not negotiable: run after the desk screen, so the cards it
+judges have already survived the cheap kills, and before the debate, so the
+panel argues about contribution rather than discovering it. Running it last
+wastes the panel's most expensive tokens on cards that were never contributions.
 
 ## Why this layer exists
 

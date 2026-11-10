@@ -66,6 +66,20 @@ Then open `pipeline-config.md` and set, at minimum:
   Three gates read this and the run stops at the first deep layer without it.
   Fix one value for the whole run.
 - `field_profile` and `gate_mode`.
+- The three model tiers: `model_default`, `model_mid`, `model_strong`. They ship
+  as placeholders, and they are not optional. The funnel runs its bulk work on
+  `model_default` and reserves `model_strong` for adjudication and review, which
+  is most of why a full run is affordable. Leave them unset and a skill has no
+  model to delegate to.
+- `budget.max_wall_clock`, if you want the run to stop on its own. It and
+  `driver_context_ceiling` are the only two budget keys that are stopping rules;
+  every other key in that block is a counter that reports and does not halt.
+  There is no spend cap, so set the wall clock before an unattended run.
+
+Worth knowing before the first run: `g1_threshold` and `g1_fallthrough` decide
+whether a funnel that clears nothing ends PARKED or ARCHIVED. The defaults are
+deliberate and most first runs clear nothing, which is the bar working rather
+than a fault.
 
 Paths in that file are relative to the project. `tools_dir` and `calibration_file`
 point back up at this bundle, so keep the project inside it or set absolute paths.
@@ -86,9 +100,26 @@ Two things to set first:
   call before `/init-submission` runs; several skills read it.
   Replace it with your own; the compliance skills read the floor and deadline from it.
 
-The hooks only register when the project is the session's own directory. Launch
-from the project folder, not from this one, or nothing is recorded and nothing
-errors.
+**Known limitation: you cannot have both the skills and the hooks in one
+session.** The hooks register only when the project folder is the session's own
+directory. The skills and the search backend load only from this bundle's root,
+because that is where `.claude/skills/` lives and where `.mcp.json` resolves its
+relative path. Those are different directories, so:
+
+- Launch from the bundle root and you get all 41 skills and the search backend.
+  The hooks never register, so nothing is recorded, and nothing errors.
+- Launch from the project folder and the hooks record correctly. You lose the
+  skills and the backend, which several skills refuse to run without.
+
+The hooks themselves handle either case: `resolve_project_dir` finds the
+project from its own path rather than trusting `CLAUDE_PROJECT_DIR`. The
+constraint is Claude Code's hook registration, which is per session root.
+
+Until this is resolved, run the pipeline from the bundle root and maintain the
+contribution record deliberately: `/log-conversation` and `/log-human-time` write
+the same files the hooks would, and `/finalize-compliance` reconciles them. The
+record is then as complete, and you are the one keeping it current rather than
+the hooks. Do not assume a silent hook is a working one.
 
 ## Troubleshooting
 

@@ -82,4 +82,4 @@ number or citation. A proof with an honest open step beats a proof with an inven
 - Once the proof is written and its correctness accepted, hand exposition to
   `proof-readability` for the content-preserving polish pass. Do not skip straight to readability on
   an unverified proof.
-- Append a dated entry to.
+- Append a dated entry to `notes/lab_notebook.md`.

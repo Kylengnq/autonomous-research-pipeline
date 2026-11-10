@@ -43,14 +43,14 @@ stage, and where errors escalate.
 
 ### S0. Session bookends (cross-cutting)
 
-- Agent does: at session open, read plus the lab-notebook
+- Agent does: at session open, read `notes/STATE.md` plus the lab-notebook
   tail and produce a five-line brief (status, live findings, in-flight work,
   next action, blockers). At session close, regenerate `STATE.md` from the
   notebook, git, and the session's artifacts, then commit.
 - Self-verification: the brief names a concrete next action; the regenerated
   STATE.md carries numbers, not summaries of summaries.
-- Artifact: (one canonical file, L9); dated append-only
-  entries in; one commit per session.
+- Artifact: `notes/STATE.md` (one canonical file, L9); dated append-only
+  entries in `notes/lab_notebook.md`; one commit per session.
 - Human gate: the close is human-activated. Handoff and commit run only
   when the author initiates them (the agent may suggest closing, never
   self-trigger); the session-close pair is the pipeline's last stage in
@@ -736,7 +736,7 @@ without a debate), then the debate, then pilots, then the final.
   debate records and pilot reports, and beside it every
   `strong-field-candidate` with the gate that capped it and the cheapest
   action that would clear it. The author picks, declines, or commissions a
-  rework. Recorded in. **On an empty slate with
+  rework. Recorded in `notes/decisions.md`. **On an empty slate with
   `g1_fallthrough` set** the checkpoint carries three parts in order — the zero,
   the DECLINE diagnosis, then the labelled fallthrough tier — and the author may
   additionally take a fallthrough card forward, in which case the G1 acceptance
@@ -1053,7 +1053,7 @@ gate, so a stage whose integrity check refuses stays refused and is reported as
 unrun. `run-pipeline` carries the per-gate detail of what each decision
 constrains.
 
-Human gates are recorded in with date, options
+Human gates are recorded in `notes/decisions.md` with date, options
 considered, choice, and a one-line rationale, naming the review packet the
 decision was taken from.
 
@@ -1138,7 +1138,7 @@ its SKILL.md when slash registration fails.
 
 | | Detail |
 |---|---|
-| Dropped | the venue compliance rail: submission package, human time log, contribution report, conversation auto-logging hooks, eligibility checks, finalize-compliance. Gate logging shrinks from a submission exhibit to a entry. |
+| Dropped | the venue compliance rail: submission package, human time log, contribution report, conversation auto-logging hooks, eligibility checks, finalize-compliance. Gate logging shrinks from a submission exhibit to a `notes/decisions.md` entry. |
 | Added | Data-anchored funnel mode with the F-1 held-data profile, the peek ledger, and the private-spine disclosure rule; S1b multi-round debate, refinement, and gated pilot; S8 adversarial review as a stage of its own (editor plus opposed referees, critic-fixer loop, advocate/skeptic contribution pass, decision-distribution option); the explicit error-escalation ladder; model-escalation policy; segregated `reviews/`; explicit-invocation-only review skills. |
 | Kept | Pre-registration hard gate, synthetic-first gate, claim ledger and validator, script registry and drift audit, paper set and search log, citation tiering, Material Gap rule, session bookends and single STATE.md, lab notebook, banned-words discipline. |
 
@@ -1163,9 +1163,9 @@ displacement question the data is pointed at, which stays with
 
 ## 8. State and memory
 
-One canonical state file, regenerated at every session
-close and read at every open (L9). is the
-append-only audit trail, one dated entry per skill output.
+One canonical state file, `notes/STATE.md`, regenerated at every session
+close and read at every open (L9). `notes/lab_notebook.md` is the
+append-only audit trail, one dated entry per skill output. `notes/decisions.md`
 is the append-only record of gate decisions and design choices. Nothing else
 holds state; any document that starts accumulating state gets folded into
 these three or deleted.

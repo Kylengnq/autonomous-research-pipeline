@@ -18,4 +18,4 @@ the narrative belongs in `lab_notebook.md`.
 6. **Blockers / caveats**: none recorded.
 
 7. **Pointers**: `pipeline-config.md`; `../../workflow/pipeline-design.md` for
-   the stage map; for the decision log.
+   the stage map; `notes/decisions.md` for the decision log.

@@ -319,14 +319,14 @@ Before declaring the calibration set built, verify:
 
 ### Phase 6: Log
 
-Append a dated entry to: build date, counts of
+Append a dated entry to `notes/lab_notebook.md`: build date, counts of
 accepted and stalled papers, lens distribution. Append all Corbis queries
 used to `output/search_log.md`.
 
 ## Outputs
 
 - `references/top_journal_calibration.json` (new or refreshed).
-- Entry in.
+- Entry in `notes/lab_notebook.md`.
 - Queries logged to `output/search_log.md`.
 
 ## How downstream skills use this file

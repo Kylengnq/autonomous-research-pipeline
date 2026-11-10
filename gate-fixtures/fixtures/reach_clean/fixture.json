@@ -1,0 +1,18 @@
+{
+  "gate": "stage reachability (the conductor can enter what it names)",
+  "defect_class": "none (negative control: every named stage is invocable)",
+  "expect": "pass",
+  "must_mention": [
+    "reachability OK",
+    "3 stage"
+  ],
+  "must_not_mention": [
+    "FAIL"
+  ],
+  "cmd": [
+    "{python}",
+    "{checkers}/reachability_check.py",
+    "--skills-root",
+    "skills"
+  ]
+}

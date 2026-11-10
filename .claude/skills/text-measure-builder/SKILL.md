@@ -64,7 +64,7 @@ primary unless the expansion clears the gate and the user opts to switch.
   clearly delimited from the validated seed set.
 - A short report in `output/` listing candidate terms, similarity scores, kept/rejected decisions,
   and the validation-gate table (correlation, monotonicity, time profile, benchmark, variation).
-- An entry in.
+- An entry in `notes/lab_notebook.md`.
 
 ## Notes
 

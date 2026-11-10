@@ -62,7 +62,7 @@ sources bound into it; the packet's own cover lists those.
 4. Fill **Read from** with the gate's review packet. If the author decided from
    something other than the packet, say which file and why, rather than naming
    the packet because it exists.
-5. Optionally note the decision in if it is a milestone.
+5. Optionally note the decision in `notes/lab_notebook.md` if it is a milestone.
 
 ## Outputs
 

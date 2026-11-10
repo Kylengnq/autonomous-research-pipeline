@@ -1,0 +1,15 @@
+{
+  "gate": "stage reachability (the conductor can enter what it names)",
+  "defect_class": "a one-word stage name is blocked; an over-clever name pattern skips it",
+  "expect": "fail",
+  "must_mention": [
+    "handoff",
+    "disable-model-invocation"
+  ],
+  "cmd": [
+    "{python}",
+    "{checkers}/reachability_check.py",
+    "--skills-root",
+    "skills"
+  ]
+}

@@ -49,7 +49,7 @@ submission/     the compliance record, if the venue wants one
 
 ## Standing rules
 
-- **Read first in every session.** `/resume` does this and
+- **Read `notes/STATE.md` first in every session.** `/resume` does this and
   produces a five-line brief. It is the canonical state; the lab notebook is the
   narrative.
 - **Every script is registered** through `script-registry` with its purpose,

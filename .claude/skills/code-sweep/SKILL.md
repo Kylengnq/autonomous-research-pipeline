@@ -39,7 +39,7 @@ the code-and-data package, not the findings.
 ## Outputs
 
 - The sweep report (stdout).
-- A entry noting the clean sweep before submission.
+- A `notes/lab_notebook.md` entry noting the clean sweep before submission.
 
 ## Validation
 

@@ -1,7 +1,6 @@
 ---
 name: edmans-audit
 description: "Audits inference quality and spin after review, before sign-off: each load-bearing claim placed on the evidence ladder (statement, fact, representative data, causal proof) with language capped at its rung; importance, displacement, spin, and falsification path checked over the abstract and intro."
-disable-model-invocation: true
 ---
 
 # Edmans Audit

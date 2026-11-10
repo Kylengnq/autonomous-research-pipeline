@@ -1,13 +1,11 @@
 ---
 name: idea-debate
 description: "Funnel layer F3: runs the surviving idea set through the pipeline's deepest layers: a novelty audit that positions each idea against the closest literature and verifies its citations (seeding the S2 paper set) and a three-editor desk simulation that returns a panel_reach estimate rather than a binary (only a median reach of none kills), then the contribution judge (`idea-novelty`, step 1.5) which asks what the finding would mean under each possible result and can retire a design that is feasible and pointless, then a four-role clean-room debate (advocate, skeptic, feasibility assessor, methods referee) at adaptive depth, feasibility pilots whenever no role voted KILL, a decision audit that reviews every terminal decision — kills and advances alike, pilot verdicts included on the themed path — for literature error, missed remedy, category error, role capture, unverified premise, or a counting definition that does not match what the design requires, and a G1 verdict step that scores every surviving card on the finance-idea-screening ladder (top-generalist-candidate / strong-field-candidate / revise / kill) against a declared `g1_threshold` and returns however many clear it — none, one, or many. G1 is two-sided: it refuses cards below the bar and hands every strong-field card the gate that capped it plus the cheapest action that would clear it, for author-triggered rework. When nothing clears the bar, the stage states that count first, reports the DECLINE diagnosis, and then presents a separately-labelled g1_fallthrough tier for author review rather than ending the run; the tiers are never merged and ARCHIVED now needs both tiers empty. Every presented card, slate or fallthrough, also carries a 1-2 page research_proposal.md on the seven-section Bayes outline (working title, background naming the discipline, research questions answering what is new, focused literature review, data and methodology, implications, references) — written as a rendering of the card's verified handoff artifacts, never as new generation, with a fallthrough proposal stating on its face that the card did not clear the bar. Feasibility is Gate F, hard, and can refuse a card at any score. Every gate is marked checkable or judged, and a rung asserts gate clearance and never a predicted placement. Enforces role isolation, the quarantine/handoff artifact split, measure-before-repair routing (the revision clinic runs only downstream of an infeasible pilot), dispositional diversity on every panel that votes, and fallback triage by failure type. Each slate item carries its computed usable sample, its named binding constraint, and the cheapest action that would relax it; reach is advisory and always labelled judged-not-calibrated. In data_mode: anchored the feasibility assessor queries the held data instead of arguing about it, and access failures route separately from data failures."
-disable-model-invocation: true
 ---
 
 # Idea Debate (F3)
 
-The funnel's last layer (S1b). Runs only
-when explicitly invoked. Sequencing is cheapest-first: audit and desk
+The funnel's last layer (S1b). Sequencing is cheapest-first: audit and desk
 screen kill before the panel spends tokens; the panel routes before
 pilots run code; the decision audit then reviews what the deciding layers
 did, before the comparative final ranks what survived them.
@@ -18,6 +16,18 @@ Read `pipeline-config.md` first: `theme`, `ideas_dir`, `field_profile`,
 when `data_mode: anchored`). All judgment roles run on `model_strong` (L11).
 Escalation per `playbooks/error-escalation.md`; gate resolution per
 `playbooks/gate-modes.md`.
+
+
+## When to use
+
+Driven by `run-pipeline` as the last layer of S1b, after the pilot on the themed
+path and after the debate gate on the swarm path. The author may name it
+directly to re-run the panel on a revised slate.
+
+It is the last thing between the funnel and G1, so it is also the last chance to
+kill. Do not run it to confirm a decision already made: a panel convened to
+ratify produces a ratification, which is the failure mode the adversarial
+structure exists to prevent.
 
 ## What arrives here, by path
 

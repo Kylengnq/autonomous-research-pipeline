@@ -1,7 +1,6 @@
 ---
 name: handoff
 description: "Ends a session by regenerating the canonical state file from the lab notebook, git, and the session's artifacts: status, findings with numbers, in-flight jobs with sentinels, a runnable next action, blockers. Author-activated: the closing stage of every session, followed by commit-session."
-disable-model-invocation: true
 ---
 
 # Handoff

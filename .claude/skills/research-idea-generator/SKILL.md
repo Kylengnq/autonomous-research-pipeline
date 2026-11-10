@@ -495,7 +495,7 @@ At the end of the run, explicitly tell the user what to do next. Pick the most r
 5. **If the calibration set is more than 6 months old**: "Consider refreshing with `/calibrate-rubric` before relying on Top Generalist labels — the frontier moves."
 6. **Always remind**: "Log this brainstorming conversation with `/log-conversation` and the time spent reviewing the output with `/log-human-time` so the venue submission record stays current."
 
-Append a dated entry to: topic, number of candidates generated, number that cleared each gate, top 3 with tiers.
+Append a dated entry to `notes/lab_notebook.md`: topic, number of candidates generated, number that cleared each gate, top 3 with tiers.
 
 ## Tool integration (Corbis MCP)
 

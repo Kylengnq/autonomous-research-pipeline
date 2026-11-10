@@ -34,7 +34,7 @@ requires "a time log of human activity"; this skill maintains it.
 3. Append a new row to the **Sessions** table in chronological position.
 4. Recompute the **Running totals** table by re-summing all rows grouped by
    author.
-5. Append a dated entry to only if this session
+5. Append a dated entry to `notes/lab_notebook.md` only if this session
    represents a deliverable milestone; otherwise skip the lab note (avoid
    flooding the notebook with routine session logs).
 

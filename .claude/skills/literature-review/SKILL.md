@@ -260,7 +260,7 @@ For all output formats, also produce a reading list using `assets/reading-list-t
 
 ### Phase 5: Log and state
 
-**Lab notebook**: Append an entry to:
+**Lab notebook**: Append an entry to `notes/lab_notebook.md`:
 ```markdown
 ---
 

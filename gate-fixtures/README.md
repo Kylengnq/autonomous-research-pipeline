@@ -56,6 +56,16 @@ python3 run_fixtures.py --only registry -v
 python3 run_fixtures.py --skills-root /path/to/other/skills
 ```
 
+**Added**, after a cold run of the published tree stopped before G1:
+four `reach_*` fixtures and `reachability_check.py`. The gate they cover is
+stage reachability. Seven skills carried `disable-model-invocation: true`,
+including four funnel layers, so `run-pipeline` could not enter the stages its
+own table names, and the harness also refuses the documented SKILL.md fallback
+for those skills. Every other fixture passed throughout, which is the point: the
+suite tested what gates do and nothing tested whether a stage could be called at
+all. One of the four fixtures exists only because the first draft of the checker
+required a hyphen in a skill name and silently skipped `handoff`.
+
 ## Why this exists
 
 `workflow/pipeline-design.md` §4 lists twenty-odd machine gates. Every one of

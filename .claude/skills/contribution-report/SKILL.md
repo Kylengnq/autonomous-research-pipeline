@@ -55,13 +55,13 @@ not, refuse and ask the user to run `/init-submission` first.
    human typed but the AI suggested, AI-generated tables pasted verbatim, large
    mechanical refactors. Ask the user to confirm classifications it cannot
    infer.
-8. Append a dated entry to summarizing the headline
+8. Append a dated entry to `notes/lab_notebook.md` summarizing the headline
    numbers.
 
 ## Outputs
 
 - Updated `submission/contribution_report.md`.
-- Entry in.
+- Entry in `notes/lab_notebook.md`.
 
 ## Validation
 

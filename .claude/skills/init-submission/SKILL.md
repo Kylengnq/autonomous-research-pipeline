@@ -61,7 +61,7 @@ this once, on the day the project starts.
    entry covering the time the human spent issuing the initial prompt.
 9. If the first AI response exists, immediately invoke the `log-conversation`
    skill so `submission/conversations/` has its first transcript.
-10. Append a dated entry to:
+10. Append a dated entry to `notes/lab_notebook.md`:
    `## YYYY-MM-DD — init-submission` followed by a one-line summary.
 11. **Verify the logging rail actually switched on.** Populating
    `initial_prompt.md` is what releases the hooks from fail-closed, so this is
@@ -86,7 +86,7 @@ this once, on the day the project starts.
 - `submission/call_requirements.md` (confirmed)
 - `submission/human_time_log.md` (first row added)
 - Optional: first transcript file in `submission/conversations/`
-- Entry in
+- Entry in `notes/lab_notebook.md`
 
 ## Validation
 

@@ -47,14 +47,14 @@ gets built.
 4. Append a row to the index table in `submission/conversations/README.md`:
    `| file | date | stage | model / agent | goal |`. Sort the table
    chronologically (oldest first).
-5. Append a dated entry to noting the conversation
+5. Append a dated entry to `notes/lab_notebook.md` noting the conversation
    was logged.
 
 ## Outputs
 
 - `submission/conversations/YYYY-MM-DD_HHMM_<slug>.md` (new file).
 - Updated index in `submission/conversations/README.md`.
-- Entry in.
+- Entry in `notes/lab_notebook.md`.
 
 ## Validation
 

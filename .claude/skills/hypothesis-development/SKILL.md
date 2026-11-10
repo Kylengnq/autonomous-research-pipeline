@@ -73,4 +73,4 @@ if useful, move any accounting identities to a short appendix.
   (e.g. a `sec:theory` label becoming `sec:hypotheses`) and the related-work text that referred to
   the old model.
 - If equations are retained, place them in an appendix and reference them from the body in words.
-- Update `output/paper_set.json` and `output/search_log.md`; append a entry.
+- Update `output/paper_set.json` and `output/search_log.md`; append a `notes/lab_notebook.md` entry.

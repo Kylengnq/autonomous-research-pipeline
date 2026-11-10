@@ -1,7 +1,6 @@
 ---
 name: peer-review
 description: "Simulates journal peer review at full rigor: integrity pre-gate (ledger, registry, citations, compile), advocate/skeptic contribution panel, calibrated editor desk review, four blind referees (two opposed dispositions, a replication referee re-deriving every number, and a standing opposition referee attacking methodology, literature, findings, contribution, and whole-paper coherence and logic), verification of referee findings before synthesis, fatal/addressable/taste triage, and a bounded critic-fixer loop. Modes: R&R continuation, hostile-editor stress, decision-distribution variance, and a fast pre-submission light check."
-disable-model-invocation: true
 ---
 
 # Peer Review

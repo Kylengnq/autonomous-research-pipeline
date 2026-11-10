@@ -71,4 +71,9 @@ script.
 - **Skills must work without slash registration.** Some skills fail to
   register as commands; reading the SKILL.md and following it manually is
   always a supported path, so skills never depend on invocation-time
-  argument magic.
+  argument magic. This holds only while a skill stays model-invocable:
+  `disable-model-invocation: true` makes the harness refuse both the call
+  and the manual fallback, in terms. No skill the conductor drives may
+  carry it. A cold run found four funnel layers that did, which made
+  `/run-pipeline` unable to reach its own stages while every other check
+  passed.

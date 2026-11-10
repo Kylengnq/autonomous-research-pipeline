@@ -77,7 +77,7 @@ These are this repo's additions on top of the generic best practices. A research
 3. **Run a feedback loop for quality-critical output.** Validator -> fix -> repeat, with an explicit
    "only proceed when it passes" (e.g. `claim_ledger.py validate` exiting 0 before `draft-paper` is
    done; the compile gate). Surface a plan-validate-execute step for batch or destructive operations.
-4. **Log to the shared state.** Append to (one dated entry per deliverable)
+4. **Log to the shared state.** Append to `notes/lab_notebook.md` (one dated entry per deliverable)
    and, for literature work, `output/search_log.md`; merge into `output/paper_set.json`, never
    overwrite.
 5. **Name its human gate, if any.** If the stage involves an author decision (idea, framing, design,

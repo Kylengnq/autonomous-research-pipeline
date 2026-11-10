@@ -30,7 +30,7 @@ Project deltas on top of the guide:
    (finance / economics / econometrics) and the model policy. Skills refer
    to config keys, never literal paths. This fixes both the predecessor workflow's baked-in
    `submission/` layout and the hardcoded-path defect in the crawled repos.
-2. ** replaces gate-log.** A skill that ends at a human
+2. **`notes/decisions.md` replaces gate-log.** A skill that ends at a human
    gate closes with: record date, gate, options considered, choice, one-line
    rationale in the decisions log. No separate skill, no submission exhibit.
 3. **Review-type skills** (`peer-review`, `edmans-audit`) set
@@ -102,6 +102,12 @@ Spec:
   findings with numbers, in-flight jobs with sentinels, a runnable next
   action, blockers. Author-activated: the closing stage of every session,
   followed by commit-session."
+- Frontmatter: no `disable-model-invocation` on any skill the conductor
+  drives. The flag blocks model-initiated calls, and `run-pipeline` IS a
+  model-initiated call, so a stage carrying it cannot be reached by the
+  only entry point the pipeline advertises. The protection it was adopted
+  for, not firing an expensive layer spontaneously, belongs in the skill's
+  "When to use" and in the stage order, which the conductor already enforces.
 - Frontmatter: `disable-model-invocation: true` (author activates the
   close; the agent only suggests it).
 - Structure: purpose, When to use, The seven blocks, Workflow (4 steps),
@@ -176,7 +182,7 @@ exploratory label), the re-freeze-by-dated-block rule, and the
 refuse-if-blank validation all carry over unchanged.
 
 Changes: path from config (freeze lives in the paper project, committed);
-gate decision goes to; add an optional Power/MDE block
+gate decision goes to `notes/decisions.md`; add an optional Power/MDE block
 (reference: Sant'Anna `power-analysis`): expected effect size, minimum
 detectable effect at the planned sample, and the underpowered-by-design
 warning at the freeze rather than at G5; cite the escalation playbook for
@@ -265,7 +271,7 @@ break is a lead confirmed by re-estimation, not a verdict) carry over.
 Changes: generalize the confound check from the AI-project specifics
 (COVID years, tech composition) to "name the era, composition, and
 exposure confounds for this setting," keeping COVID as the worked example;
-verdicts feed G5 with the decision recorded in; paths
+verdicts feed G5 with the decision recorded in `notes/decisions.md`; paths
 from config.
 
 Spec:
@@ -345,7 +351,7 @@ triaged adversarial pass carry over.
 
 Changes: strip the venue references; output to the reviews dir; runs after the
 peer-review loop and before G6 (the design's ordering); flagged rewrites
-route back to draft-paper; the G6 decision lands in.
+route back to draft-paper; the G6 decision lands in `notes/decisions.md`.
 
 Spec:
 - description: "Audits inference quality and spin after review, before
@@ -472,7 +478,7 @@ Spec:
 
 ---
 
-## Author decisions (all resolved, see
+## Author decisions (all resolved, see `notes/decisions.md`)
 
 1. `pipeline-config.md` is markdown: one file with a key-value block at the
    paper project's root.
@@ -584,8 +590,8 @@ Spec (idea-debate, F3, flagship):
   pilot dispatch on no KILL (pilot before clinic), comparative final
   (fresh judges, handoff-only, always names one winner), fallback triage,
   G1 per gate mode,
-  audit counters, validation. ~135 lines.
-  `disable-model-invocation: true`.
+  audit counters, validation. ~135 lines. Model-invocable: the conductor
+  drives this layer.
 - Reuse: SKEPTIC and CREDIBILITY dispositions and the contribution
   panel from workspace peer-review, ex-ante mode; desk sim from
   workspace finance-idea-screening, read in place.
@@ -620,7 +626,7 @@ Spec (idea-pilot, F3):
   checks (registered slice script, coverage, variation, measure
   sanity, power inputs), headline firewall with DISCLOSURE REQUIRED
   flag, two-zone output, three verdicts, validation. ~85 lines.
-  `disable-model-invocation: true`.
+  Model-invocable: the conductor drives this layer.
 - Gates: entry (no KILL from any role); firewall (no outcome-on-treatment
   comparison anywhere; grep check in validation); conditional verdict
   returns to debate, never self-approves.
@@ -883,7 +889,7 @@ Spec (A3, rubric ratchet, new skill, BUILD-new, P2):
   1. Never kill rate, pool size, or cycle time. The source's §IX.B says a
      ratchet improves the metric it can see; every one of those three
      improves when a rubric becomes less discriminating, which is the
-     failure this skill would otherwise industrialize. already carries the argument in the kill-audit entry.
+     failure this skill would otherwise industrialize. `notes/decisions.md` already carries the argument in the kill-audit entry.
   2. Held-out split, because the source's §IX.B names overfitting the
      evaluation set as the second failure, and a rubric tuned to
      convergence on the full set is exactly that.
