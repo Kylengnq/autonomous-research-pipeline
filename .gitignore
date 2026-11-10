@@ -1,0 +1,31 @@
+# Build and distribution. Anchored to the repo root: an unanchored `build/`
+# also matches project-template/build/, whose .gitkeep has to survive a clone
+# because a config key names the directory.
+/dist/
+/build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Claude Code local state
+.claude/settings.local.json
+.no-session-logging
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# OS
+.DS_Store
+Thumbs.db

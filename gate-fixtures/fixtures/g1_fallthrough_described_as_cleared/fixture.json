@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "fallthrough card described as having cleared the bar",
+  "expect": "fail",
+  "must_mention": [
+    "always-returns-items"
+  ]
+}

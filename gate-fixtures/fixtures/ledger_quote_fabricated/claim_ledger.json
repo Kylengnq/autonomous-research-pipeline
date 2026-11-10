@@ -1,0 +1,10 @@
+[
+  {
+    "id": "T1",
+    "claim": "The source states the sample is the input-file row count.",
+    "location": "sec:data",
+    "mechanism_check": "Sample-size convention, checked against the source.",
+    "source": "source.md",
+    "quote": "the sample is the input-file row count"
+  }
+]

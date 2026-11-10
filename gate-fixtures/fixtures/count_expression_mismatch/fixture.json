@@ -1,0 +1,14 @@
+{
+  "gate": "counting definition",
+  "defect_class": "wrong unit (count computed at one unit, labelled at another)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/count_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "must_mention": [
+    "re-execution gives"
+  ]
+}

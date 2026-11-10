@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "feasibility overridden (a design the data cannot carry, awarded the top rung)",
+  "expect": "fail",
+  "must_mention": [
+    "Gate F refuses at any score"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "-",
+  "expect": "pass",
+  "must_mention": [
+    "fallthrough tier of 2"
+  ]
+}

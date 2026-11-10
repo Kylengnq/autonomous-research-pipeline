@@ -1,0 +1,14 @@
+{
+  "gate": "G1 acceptance",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_acceptance_check.py",
+    "--record",
+    "g1_acceptance.md"
+  ],
+  "defect_class": "-",
+  "expect": "pass",
+  "must_mention": [
+    "from the fallthrough tier"
+  ]
+}

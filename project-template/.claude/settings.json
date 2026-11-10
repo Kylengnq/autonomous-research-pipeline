@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/session-start.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/log-turn.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/session-end.py",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_FILE_PATH\"; if [ -n \"$FILE\" ] && echo \"$FILE\" | grep -q '\\.tex$'; then if grep -q '\\\\documentclass' \"$FILE\" 2>/dev/null; then DIR=$(dirname \"$FILE\"); BASE=$(basename \"$FILE\" .tex); cd \"$DIR\" && pdflatex -interaction=nonstopmode -halt-on-error \"$BASE\" > /dev/null 2>&1 && bibtex \"$BASE\" > /dev/null 2>&1 && pdflatex -interaction=nonstopmode \"$BASE\" > /dev/null 2>&1 && pdflatex -interaction=nonstopmode \"$BASE\" > /dev/null 2>&1; fi; fi",
+            "timeout": 60,
+            "statusMessage": "Compiling LaTeX to PDF..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_FILE_PATH\"; if [ -n \"$FILE\" ] && echo \"$FILE\" | grep -q '\\.tex$'; then if grep -q '\\\\documentclass' \"$FILE\" 2>/dev/null; then DIR=$(dirname \"$FILE\"); BASE=$(basename \"$FILE\" .tex); cd \"$DIR\" && pdflatex -interaction=nonstopmode -halt-on-error \"$BASE\" > /dev/null 2>&1 && bibtex \"$BASE\" > /dev/null 2>&1 && pdflatex -interaction=nonstopmode \"$BASE\" > /dev/null 2>&1 && pdflatex -interaction=nonstopmode \"$BASE\" > /dev/null 2>&1; fi; fi",
+            "timeout": 60,
+            "statusMessage": "Compiling LaTeX to PDF..."
+          }
+        ]
+      }
+    ]
+  }
+}

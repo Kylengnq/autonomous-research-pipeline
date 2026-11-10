@@ -1,0 +1,24 @@
+[
+  {
+    "script": "scripts/estimate.py",
+    "purpose": "Estimate the uniformly weighted ATT.",
+    "inputs": [
+      "panel.csv"
+    ],
+    "outputs": [
+      "results.json"
+    ],
+    "packages": [],
+    "loc": 4,
+    "todos": 0
+  },
+  {
+    "script": "scripts/rescale.py",
+    "purpose": "(no docstring)",
+    "inputs": [],
+    "outputs": [],
+    "packages": [],
+    "loc": 2,
+    "todos": 1
+  }
+]

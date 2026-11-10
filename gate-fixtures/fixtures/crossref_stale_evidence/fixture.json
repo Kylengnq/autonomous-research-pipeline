@@ -1,0 +1,16 @@
+{
+  "gate": "claim-ledger cross-ref",
+  "defect_class": "stale evidence (script edited after the results it backs)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_ledger.py",
+    "cross-ref",
+    "claim_ledger.json",
+    "--registry",
+    "script_registry.json"
+  ],
+  "must_mention": [
+    "stale evidence"
+  ]
+}

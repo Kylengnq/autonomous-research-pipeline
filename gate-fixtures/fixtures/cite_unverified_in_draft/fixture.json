@@ -1,0 +1,17 @@
+{
+  "gate": "citation verification",
+  "defect_class": "an unverified entry is cited in the manuscript",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/citation_check.py",
+    "--entries",
+    "entries.json",
+    "--draft",
+    "draft.tex"
+  ],
+  "must_mention": [
+    "still unverified",
+    "barred from drafts"
+  ]
+}

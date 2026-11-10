@@ -1,0 +1,10 @@
+{
+  "_why": "Review of Finance is the case that broke: the old resolver returned International Review of Economics & Finance, a different journal with 5,991 works. Journal of Finance checks the benign 'The' fold. The nonexistent name checks that a miss is reported rather than substituted.",
+  "expect": {
+    "Review of Finance": "S131117787",
+    "Journal of Finance": "S5353659",
+    "Journal of Banking and Finance": "S2876017",
+    "Nonexistent Journal of Nothing": null
+  },
+  "forbid_names": ["International Review of Economics & Finance"]
+}

@@ -1,0 +1,199 @@
+<svg viewBox="0 0 900 1350" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b6472"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b3452c"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="1350" fill="#fdfcfa"/>
+
+  <!-- ================= HEADER ================= -->
+  <text x="450" y="52" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f3a5f">The Research Pipeline</text>
+  <text x="450" y="80" text-anchor="middle" font-size="15" fill="#5b6472">From 100+ ideas to one referee-ready paper — in at most 6 prompts</text>
+  <line x1="60" y1="100" x2="840" y2="100" stroke="#d8d2c8" stroke-width="1"/>
+
+  <!-- ================= FUNNEL ================= -->
+  <text x="60" y="132" font-size="17" font-weight="bold" fill="#1f3a5f">1 · THE IDEA FUNNEL  (S1–S1b)</text>
+
+  <!-- F-1 band: anchored mode only -->
+  <polygon points="90,150 710,150 680,212 120,212" fill="#eef2f7" stroke="#2c5a8f" stroke-width="1.5" stroke-dasharray="7 4"/>
+  <text x="400" y="177" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f3a5f">F-1 · HELD-DATA PROFILE — anchored mode only</text>
+  <text x="400" y="198" text-anchor="middle" font-size="12.5" fill="#4a5a70">verified inventory, join keys, variation, expansion probes · every query in the peek ledger</text>
+
+  <!-- F0 band -->
+  <polygon points="120,222 680,222 655,284 145,284" fill="#6f9ac9"/>
+  <text x="400" y="249" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">F0 · LITERATURE LANDSCAPE — one scan</text>
+  <text x="400" y="270" text-anchor="middle" font-size="12.5" fill="#e8f0f8">occupied-margin blocklist · displacement menu · threat papers</text>
+
+  <!-- F1 band -->
+  <polygon points="145,294 655,294 625,356 175,356" fill="#4a7ab5"/>
+  <text x="400" y="321" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">F1 · SWARM — pool of 100–120 ideas</text>
+  <text x="400" y="342" text-anchor="middle" font-size="12.5" fill="#dbe7f5">12–15 isolated generators · cheap model · ¼ of cells never see the data</text>
+
+  <!-- F2 band -->
+  <polygon points="175,366 625,366 595,428 205,428" fill="#2c5a8f"/>
+  <text x="400" y="393" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">F2 · SCORING — cut to 20–25</text>
+  <text x="400" y="414" text-anchor="middle" font-size="12.5" fill="#dbe7f5">2 calibrated scorers · search-free · mid model</text>
+
+  <!-- F3 clean-room box -->
+  <rect x="190" y="438" width="420" height="172" fill="none" stroke="#7a8699" stroke-width="1.5" stroke-dasharray="6 4" rx="8"/>
+  <text x="400" y="456" text-anchor="middle" font-size="11" fill="#7a8699" font-style="italic">CLEAN ROOM — blind roles · quarantine/ vs handoff/ split</text>
+
+  <!-- F3 band -->
+  <polygon points="205,466 595,466 555,540 245,540" fill="#1f3a5f"/>
+  <text x="400" y="492" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">F3 · FULL RIGOR — every survivor</text>
+  <text x="400" y="512" text-anchor="middle" font-size="12" fill="#dbe7f5">audit → desk sim → 4-role blind debate</text>
+  <text x="400" y="528" text-anchor="middle" font-size="12" fill="#dbe7f5">→ pilot on unanimous EXPLORE</text>
+
+  <!-- Comparative final -->
+  <polygon points="245,550 555,550 515,604 285,604" fill="#153049"/>
+  <text x="400" y="574" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">COMPARATIVE FINAL</text>
+  <text x="400" y="593" text-anchor="middle" font-size="12" fill="#dbe7f5">head-to-head · needs ≥2 survivors</text>
+
+  <!-- Funnel exits (right side) -->
+  <line x1="600" y1="503" x2="700" y2="503" stroke="#b3452c" stroke-width="1.5" marker-end="url(#arrR)"/>
+  <rect x="705" y="440" width="152" height="30" rx="6" fill="#f3e3de" stroke="#b3452c"/>
+  <text x="781" y="459" text-anchor="middle" font-size="12" fill="#7c2d1c">Graveyard (dead)</text>
+  <rect x="705" y="476" width="152" height="30" rx="6" fill="#f7ede0" stroke="#b07d3e"/>
+  <text x="781" y="495" text-anchor="middle" font-size="12" fill="#7a5320">Blocked registry (waits)</text>
+  <rect x="705" y="512" width="152" height="30" rx="6" fill="#f7ede0" stroke="#b07d3e" stroke-dasharray="5 3"/>
+  <text x="781" y="531" text-anchor="middle" font-size="11" fill="#7a5320">Access-blocked (permission)</text>
+  <rect x="705" y="548" width="152" height="30" rx="6" fill="#e9eef6" stroke="#4a7ab5"/>
+  <text x="781" y="567" text-anchor="middle" font-size="12" fill="#2c5a8f">Revision clinic (1 rework)</text>
+  <path d="M 705 563 C 655 563 640 545 615 535" stroke="#4a7ab5" stroke-width="1.2" fill="none" marker-end="url(#arr)" stroke-dasharray="4 3"/>
+
+  <!-- Bench (left side) -->
+  <rect x="60" y="545" width="140" height="46" rx="6" fill="#e8f0e7" stroke="#2e7d32"/>
+  <text x="130" y="564" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e5522">BENCH</text>
+  <text x="130" y="580" text-anchor="middle" font-size="10.5" fill="#1e5522">ranked runners-up, warm</text>
+  <path d="M 200 568 C 240 568 250 588 275 600" stroke="#2e7d32" stroke-width="1.2" fill="none" stroke-dasharray="4 3"/>
+
+  <!-- G1 -->
+  <line x1="400" y1="604" x2="400" y2="636" stroke="#5b6472" stroke-width="2" marker-end="url(#arr)"/>
+  <polygon points="400,638 448,666 400,694 352,666" fill="#d97706"/>
+  <text x="400" y="671" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">G1</text>
+  <text x="470" y="663" font-size="12.5" fill="#5b6472">author picks the idea</text>
+  <text x="470" y="679" font-size="11" fill="#8a8375">(downstream kills re-enter here via the bench)</text>
+
+  <!-- ================= PAPER PIPELINE ================= -->
+  <line x1="60" y1="750" x2="840" y2="750" stroke="#d8d2c8" stroke-width="1"/>
+  <text x="60" y="780" font-size="17" font-weight="bold" fill="#1f3a5f">2 · THE PAPER PIPELINE  (S2–S8)</text>
+
+  <!-- Row 1: S2 -> S3 -> S4 -> S5 -->
+  <rect x="60" y="800" width="150" height="66" rx="8" fill="#2c5a8f"/>
+  <text x="135" y="826" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S2 Literature</text>
+  <text x="135" y="844" text-anchor="middle" font-size="11" fill="#dbe7f5">positioning + threat list</text>
+  <text x="135" y="858" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 citations verified</text>
+
+  <polygon points="228,833 252,819 276,833 252,847" fill="#d97706"/>
+  <text x="252" y="837" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#ffffff">G2</text>
+  <line x1="210" y1="833" x2="226" y2="833" stroke="#5b6472" stroke-width="1.5"/>
+  <line x1="278" y1="833" x2="294" y2="833" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="296" y="800" width="140" height="66" rx="8" fill="#2c5a8f"/>
+  <text x="366" y="830" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S3 Hypotheses</text>
+  <text x="366" y="848" text-anchor="middle" font-size="11" fill="#dbe7f5">mechanism → H1…Hn</text>
+
+  <line x1="436" y1="833" x2="460" y2="833" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="462" y="800" width="150" height="66" rx="8" fill="#2c5a8f"/>
+  <text x="537" y="822" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S4 Pre-register</text>
+  <text x="537" y="840" text-anchor="middle" font-size="11" fill="#dbe7f5">spec frozen in git</text>
+  <text x="537" y="856" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 commit · quarantine · peek</text>
+
+  <polygon points="630,833 654,819 678,833 654,847" fill="#d97706"/>
+  <text x="654" y="837" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#ffffff">G3</text>
+  <line x1="612" y1="833" x2="628" y2="833" stroke="#5b6472" stroke-width="1.5"/>
+  <line x1="680" y1="833" x2="696" y2="833" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="698" y="800" width="142" height="66" rx="8" fill="#2c5a8f"/>
+  <text x="769" y="826" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S5 Data</text>
+  <text x="769" y="844" text-anchor="middle" font-size="11" fill="#dbe7f5">any source, route recorded</text>
+  <text x="769" y="858" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 registry · G4 spine plan</text>
+
+  <!-- snake down -->
+  <path d="M 769 866 L 769 898 L 135 898 L 135 918" stroke="#5b6472" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Row 2: S6 -> S7 -> S8 -> paper -->
+  <rect x="60" y="920" width="150" height="70" rx="8" fill="#2c5a8f"/>
+  <text x="135" y="942" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S6 Estimation</text>
+  <text x="135" y="960" text-anchor="middle" font-size="11" fill="#dbe7f5">+ robustness suite</text>
+  <text x="135" y="976" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 synthetic-first recovery</text>
+
+  <polygon points="228,955 252,941 276,955 252,969" fill="#d97706"/>
+  <text x="252" y="959" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#ffffff">G5</text>
+  <line x1="210" y1="955" x2="226" y2="955" stroke="#5b6472" stroke-width="1.5"/>
+  <line x1="278" y1="955" x2="294" y2="955" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="296" y="920" width="150" height="70" rx="8" fill="#2c5a8f"/>
+  <text x="371" y="942" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S7 Writing</text>
+  <text x="371" y="960" text-anchor="middle" font-size="11" fill="#dbe7f5">tables spliced from JSON</text>
+  <text x="371" y="976" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 ledger · citations · compile</text>
+
+  <line x1="446" y1="955" x2="470" y2="955" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="472" y="920" width="160" height="70" rx="8" fill="#1f3a5f"/>
+  <text x="552" y="942" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">S8 Adversarial review</text>
+  <text x="552" y="960" text-anchor="middle" font-size="11" fill="#dbe7f5">editor + 4 blind referees</text>
+  <text x="552" y="976" text-anchor="middle" font-size="10" fill="#a9c4e2">🔒 bounded critic–fixer loop</text>
+
+  <polygon points="650,955 674,941 698,955 674,969" fill="#d97706"/>
+  <text x="674" y="959" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#ffffff">G6</text>
+  <line x1="634" y1="955" x2="648" y2="955" stroke="#5b6472" stroke-width="1.5"/>
+  <line x1="700" y1="955" x2="716" y2="955" stroke="#5b6472" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="718" y="920" width="122" height="70" rx="8" fill="#2e7d32"/>
+  <text x="779" y="949" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">📄 Paper</text>
+  <text x="779" y="968" text-anchor="middle" font-size="10.5" fill="#d7e8d6">referee-ready draft</text>
+
+  <!-- fatal-finding return path -->
+  <path d="M 552 990 L 552 1012 L 40 1012 L 40 568 L 56 568" stroke="#b3452c" stroke-width="1.2" fill="none" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+  <text x="330" y="1030" font-size="10.5" fill="#b3452c">fatal finding → back to a gate, then the bench (never restart from zero)</text>
+
+  <!-- ================= FOOTER: NUMBERS ================= -->
+  <line x1="60" y1="1050" x2="840" y2="1050" stroke="#d8d2c8" stroke-width="1"/>
+  <text x="60" y="1080" font-size="17" font-weight="bold" fill="#1f3a5f">3 · WHAT RUNS IT</text>
+
+  <rect x="60" y="1100" width="180" height="92" rx="10" fill="#eef2f7" stroke="#c3cfde"/>
+  <text x="150" y="1137" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f3a5f">41</text>
+  <text x="150" y="1158" text-anchor="middle" font-size="12" fill="#5b6472">pipeline skills</text>
+  <text x="150" y="1175" text-anchor="middle" font-size="10.5" fill="#8a95a5">S0 through S8, plus the driver</text>
+
+  <rect x="260" y="1100" width="180" height="92" rx="10" fill="#eef2f7" stroke="#c3cfde"/>
+  <text x="350" y="1137" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f3a5f">~500</text>
+  <text x="350" y="1158" text-anchor="middle" font-size="12" fill="#5b6472">agents per full run</text>
+  <text x="350" y="1175" text-anchor="middle" font-size="10.5" fill="#8a95a5">~22 roles · 90% cheap funnel work</text>
+
+  <rect x="460" y="1100" width="180" height="92" rx="10" fill="#eef2f7" stroke="#c3cfde"/>
+  <text x="550" y="1137" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f3a5f">11 + 6</text>
+  <text x="550" y="1158" text-anchor="middle" font-size="12" fill="#5b6472">machine + human gates</text>
+  <text x="550" y="1175" text-anchor="middle" font-size="10.5" fill="#8a95a5">14 machine in anchored mode</text>
+
+  <rect x="660" y="1100" width="180" height="92" rx="10" fill="#fdf3e3" stroke="#d97706"/>
+  <text x="750" y="1137" text-anchor="middle" font-size="30" font-weight="bold" fill="#b45309">≤ 6</text>
+  <text x="750" y="1158" text-anchor="middle" font-size="12" fill="#7a5320">author prompts per run</text>
+  <text x="750" y="1175" text-anchor="middle" font-size="10.5" fill="#a3823f">0 in autonomous mode</text>
+
+  <!-- Prompt timeline -->
+  <text x="60" y="1218" font-size="12.5" font-weight="bold" fill="#5b6472">Where the author appears (human mode):</text>
+  <line x1="60" y1="1240" x2="840" y2="1240" stroke="#c3cfde" stroke-width="2"/>
+  <circle cx="120" cy="1240" r="7" fill="#d97706"/><text x="120" y="1264" text-anchor="middle" font-size="10.5" fill="#5b6472">start run</text>
+  <circle cx="280" cy="1240" r="7" fill="#d97706"/><text x="280" y="1264" text-anchor="middle" font-size="10.5" fill="#5b6472">G1+G2 idea &amp; framing</text>
+  <circle cx="450" cy="1240" r="7" fill="#d97706"/><text x="450" y="1264" text-anchor="middle" font-size="10.5" fill="#5b6472">G3 design freeze</text>
+  <circle cx="600" cy="1240" r="7" fill="#d97706"/><text x="600" y="1264" text-anchor="middle" font-size="10.5" fill="#5b6472">G4/G5 data calls &amp; evidence bar</text>
+  <circle cx="740" cy="1240" r="7" fill="#d97706"/><text x="740" y="1264" text-anchor="middle" font-size="10.5" fill="#5b6472">G6 sign-off + close</text>
+
+  <!-- Legend -->
+  <line x1="60" y1="1290" x2="840" y2="1290" stroke="#d8d2c8" stroke-width="1"/>
+  <polygon points="66,1320 84,1310 102,1320 84,1330" fill="#d97706"/>
+  <text x="112" y="1324" font-size="11.5" fill="#5b6472">human gate</text>
+  <text x="205" y="1324" font-size="11.5" fill="#5b6472">🔒 machine gate</text>
+  <rect x="325" y="1312" width="26" height="14" rx="3" fill="#eef2f7" stroke="#2c5a8f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="359" y="1324" font-size="11.5" fill="#5b6472">anchored mode only (data_mode: anchored)</text>
+  <line x1="640" y1="1320" x2="676" y2="1320" stroke="#b3452c" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="684" y="1324" font-size="11.5" fill="#5b6472">kill / turn-back</text>
+  <text x="800" y="1324" font-size="11.5" fill="#8a95a5"> · v2</text>
+</svg>

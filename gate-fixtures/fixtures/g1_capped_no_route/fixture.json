@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "promote half missing (a capped verdict with no cheapest action)",
+  "expect": "fail",
+  "must_mention": [
+    "that is a label, not a route"
+  ]
+}

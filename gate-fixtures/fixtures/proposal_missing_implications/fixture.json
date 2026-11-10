@@ -1,0 +1,16 @@
+{
+  "gate": "G1 research proposal",
+  "cmd": [
+    "{python}",
+    "{checkers}/proposal_check.py",
+    "--proposal",
+    "research_proposal.md",
+    "--tier",
+    "slate"
+  ],
+  "defect_class": "implications section absent",
+  "expect": "fail",
+  "must_mention": [
+    "missing section: implications"
+  ]
+}

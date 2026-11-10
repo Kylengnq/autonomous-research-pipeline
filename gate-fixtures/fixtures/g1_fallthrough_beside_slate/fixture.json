@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "fallthrough tier shown beside a non-empty slate (padding by another route)",
+  "expect": "fail",
+  "must_mention": [
+    "padding by another route"
+  ]
+}

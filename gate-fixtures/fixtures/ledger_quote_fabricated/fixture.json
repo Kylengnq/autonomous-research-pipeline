@@ -1,0 +1,14 @@
+{
+  "gate": "claim-ledger validate",
+  "defect_class": "fabricated support (textual claim quotes what the source does not say)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_ledger.py",
+    "validate",
+    "claim_ledger.json"
+  ],
+  "must_mention": [
+    "quote not found"
+  ]
+}

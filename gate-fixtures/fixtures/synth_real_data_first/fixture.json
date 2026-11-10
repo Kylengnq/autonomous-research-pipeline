@@ -1,0 +1,15 @@
+{
+  "gate": "synthetic-first (planted-effect recovery)",
+  "defect_class": "the synthetic pass was written up after the real estimates were seen",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/synthetic_check.py",
+    "--recovery",
+    "synthetic_recovery.json"
+  ],
+  "must_mention": [
+    "ordering rule",
+    "precedes"
+  ]
+}

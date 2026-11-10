@@ -1,0 +1,17 @@
+{
+  "gate": "citation verification",
+  "defect_class": "the draft cites a key with no bibliography entry",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/citation_check.py",
+    "--entries",
+    "entries.json",
+    "--draft",
+    "draft.tex"
+  ],
+  "must_mention": [
+    "no bibliography entry",
+    "ederington1993"
+  ]
+}

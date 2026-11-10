@@ -1,0 +1,8 @@
+[
+  {
+    "script": "scripts/estimate.py",
+    "outputs": [
+      "other_results.json"
+    ]
+  }
+]

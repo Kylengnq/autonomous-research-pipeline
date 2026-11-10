@@ -1,0 +1,14 @@
+{
+  "gate": "claim-ledger validate",
+  "defect_class": "-",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_ledger.py",
+    "validate",
+    "claim_ledger.json"
+  ],
+  "must_mention": [
+    "validate OK"
+  ]
+}

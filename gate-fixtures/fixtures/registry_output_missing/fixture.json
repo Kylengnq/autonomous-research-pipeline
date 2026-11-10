@@ -1,0 +1,17 @@
+{
+  "gate": "script-registry audit",
+  "defect_class": "wrong output (declared output absent from disk)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/script-registry/scripts/registry.py",
+    "audit",
+    "--registry",
+    "script_registry.json",
+    "--dirs",
+    "scripts"
+  ],
+  "must_mention": [
+    "declared output missing"
+  ]
+}

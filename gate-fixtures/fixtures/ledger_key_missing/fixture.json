@@ -1,0 +1,14 @@
+{
+  "gate": "claim-ledger validate",
+  "defect_class": "wrong output (result file lacks the key the claim names)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_ledger.py",
+    "validate",
+    "claim_ledger.json"
+  ],
+  "must_mention": [
+    "key does not resolve"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "gate": "G1 acceptance",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_acceptance_check.py",
+    "--record",
+    "g1_acceptance.md"
+  ],
+  "defect_class": "cleared_threshold yes on a fallthrough card",
+  "expect": "fail",
+  "must_mention": [
+    "did not clear by definition"
+  ]
+}

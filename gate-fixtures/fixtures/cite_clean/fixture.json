@@ -1,0 +1,19 @@
+{
+  "gate": "citation verification",
+  "defect_class": "none (negative control: verified citations must pass)",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/citation_check.py",
+    "--entries",
+    "entries.json",
+    "--draft",
+    "draft.tex"
+  ],
+  "must_mention": [
+    "citations OK"
+  ],
+  "must_not_mention": [
+    "FAIL"
+  ]
+}

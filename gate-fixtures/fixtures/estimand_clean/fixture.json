@@ -1,0 +1,16 @@
+{
+  "gate": "manual-first reference (synthetic-first)",
+  "defect_class": "-",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/estimand_check.py",
+    "--reference",
+    "reference.json",
+    "--package",
+    "package.json"
+  ],
+  "must_mention": [
+    "estimand OK"
+  ]
+}

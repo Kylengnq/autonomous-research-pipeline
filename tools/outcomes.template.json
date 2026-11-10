@@ -1,0 +1,50 @@
+{
+  "_README": "TEMPLATE for `run_cost.py --outcomes`. Copy it into the run directory, fill it in, and fix `declared_on` BEFORE reading the run's costs. Cost per success is only worth reporting if the definition of success predates the numerator; nothing in the tool can check that, which is why the date is printed beside every figure.",
+  "_layer_names": "Must match the layer names run_cost.py prints: decision audit, debate roles, desk editors, G1 judges, novelty judge, F1 generators, contrast pass, revision clinic, benchmark, other.",
+
+  "declared_on": "YYYY-MM-DD",
+
+  "layers": {
+    "_novelty_judge_NOTE": "Declare this from artifacts only, before any cost is divided by it. Three counters, reported SEPARATELY and never pooled. A1 occupancy adjudication: a work already in paper_set named as occupying the card's design, with the occupying claim quoted. A2 displacement correction: a displacement_hunch relabelled `verified` or `misread`, quoting the target's own text (`additive` and `unverifiable` stay in the distribution and out of the numerator — `additive` is the modal honest label, so counting it measures nothing). A3 confirmed kill: CONTRIBUTION-NULL with a second independent confirmer, quoting the occupying claim. EXCLUDED from all three: whether the decision audit upheld the verdict, whether a downstream judge agreed, whether a cleared card later won at G1 — each routes a checkable signal through an uncalibrated one. On a retrofit baseline of four cards in a single pass, A1 fired on two, A2 on one, and A3 on none.",
+    "novelty judge / A1 occupancy adjudication": {
+      "runs": 0,
+      "successes": 0,
+      "success_is": "a work already in paper_set named as occupying the design, occupying claim quoted"
+    },
+    "novelty judge / A2 displacement correction": {
+      "successes": 0,
+      "success_is": "hunch relabelled `verified` or `misread`, target's own text quoted"
+    },
+    "novelty judge / A3 confirmed kill": {
+      "successes": 0,
+      "success_is": "CONTRIBUTION-NULL confirmed by a second independent judge, occupying claim quoted"
+    },
+    "decision audit": {
+      "runs": 0,
+      "successes": 0,
+      "success_is": "verdict that changed a terminal decision (overturn or reroute)"
+    },
+    "debate roles": {
+      "runs": 0,
+      "successes": 0,
+      "success_is": "objection that survived to the defect dossier"
+    }
+  },
+
+  "comparisons": [
+    {
+      "_why": "The incremental statistic is the one that decides whether a layer stays. It needs two arms of the SAME work, not two different layers: what the run cost and caught with the layer, against what it would have cost and caught without it.",
+      "name": "novelty judge on/off",
+      "with": {
+        "layers": ["novelty judge", "debate roles"],
+        "runs": 0,
+        "successes": 0
+      },
+      "without": {
+        "layers": ["debate roles"],
+        "runs": 0,
+        "successes": 0
+      }
+    }
+  ]
+}

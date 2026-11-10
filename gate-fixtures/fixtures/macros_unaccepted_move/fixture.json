@@ -1,0 +1,18 @@
+{
+  "gate": "generated values (claim_macros emit --fail-on-change)",
+  "defect_class": "silent restatement (the source moved and the paper would reprint it unread)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_macros.py",
+    "emit",
+    "claim_ledger.json",
+    "--out",
+    "build/values.tex",
+    "--fail-on-change"
+  ],
+  "must_mention": [
+    "moved",
+    "numbers moved"
+  ]
+}

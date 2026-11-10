@@ -1,0 +1,14 @@
+{
+  "gate": "G1 acceptance",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_acceptance_check.py",
+    "--record",
+    "g1_acceptance.md"
+  ],
+  "defect_class": "acceptance record with no objection dispositions",
+  "expect": "fail",
+  "must_mention": [
+    "which no run has done"
+  ]
+}

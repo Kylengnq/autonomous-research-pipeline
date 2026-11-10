@@ -1,0 +1,147 @@
+# Paper build. Generated artefacts only; edit source, never build/.
+#
+# Fill the variables from pipeline-config.md, then keep every generated file
+# under $(BUILD). The reproducibility test is `make verify`.
+#
+# Scope: estimation -> paper. Data collection is deliberately outside this
+# graph (see the missing-extract rule at the bottom): crawls are hours long,
+# rate-limited, and not idempotent, so their outputs enter as source.
+
+PYTHON      := .venv/bin/python
+SEED        := 20260101
+
+PAPER       := paper
+BUILD       := build
+RESULTS     := output
+SCRIPTS     := scripts
+ANALYSIS    := analysis
+PROCESSED   := data/processed
+
+MAIN        := $(PAPER)/main.tex
+BIB         := $(PAPER)/references.bib
+LEDGER      := $(RESULTS)/claim_ledger.json
+REGISTRY    := $(RESULTS)/script_registry.json
+# The skills root holding claim-ledger/ and script-registry/. Two traps:
+# Make does not strip whitespace before a same-line comment, so keep the
+# assignment free of trailing spaces; and if the path contains a space, it
+# must stay quoted at every use below, or Make and the shell split it.
+SKILLS      := ../.claude/skills
+
+VALUES      := $(BUILD)/values.tex
+# The accepted-values baseline is source, not a build artefact: `clean` must
+# not reach it, and it belongs in version control next to the ledger.
+LOCK        := $(RESULTS)/values.lock.json
+PDF         := $(BUILD)/main.pdf
+
+# Every results file, table, and figure the paper depends on. Extend these
+# three lists as the paper grows; they are the build graph.
+RESULT_JSON := $(RESULTS)/did_results.json $(RESULTS)/robustness_results.json
+TABLES      := $(BUILD)/tab_main.tex $(BUILD)/tab_robust.tex
+FIGURES     := $(BUILD)/fig_event.pdf
+
+.PHONY: all check verify accept clean distclean
+.DELETE_ON_ERROR:          # a failed recipe must not leave a fresh-looking target
+
+all: $(PDF)
+
+# --- results -----------------------------------------------------------
+# One rule per estimation script. The prerequisites are the real inputs;
+# script-registry reads them, so what is declared here is what the
+# replication manifest reports.
+
+$(RESULTS)/did_results.json: $(ANALYSIS)/estimate_did.py \
+                             $(PROCESSED)/panel.csv \
+                             preregistration.md
+	$(PYTHON) $< --data $(PROCESSED)/panel.csv --out $@ --seed $(SEED)
+
+$(RESULTS)/robustness_results.json: $(ANALYSIS)/robustness.py \
+                                    $(PROCESSED)/panel.csv \
+                                    $(RESULTS)/did_results.json
+	$(PYTHON) $< --data $(PROCESSED)/panel.csv --out $@ --seed $(SEED)
+
+# --- tables and figures ------------------------------------------------
+
+$(BUILD)/tab_main.tex: $(SCRIPTS)/make_tables.py $(RESULTS)/did_results.json | $(BUILD)
+	$(PYTHON) $< --results $(RESULTS)/did_results.json --table main --out $@
+
+$(BUILD)/tab_robust.tex: $(SCRIPTS)/make_tables.py $(RESULTS)/robustness_results.json | $(BUILD)
+	$(PYTHON) $< --results $(RESULTS)/robustness_results.json --table robust --out $@
+
+$(BUILD)/fig_event.pdf: $(SCRIPTS)/make_figures.py $(RESULTS)/did_results.json | $(BUILD)
+	$(PYTHON) $< --results $(RESULTS)/did_results.json --figure event --out $@
+
+# --- generated values --------------------------------------------------
+# Numbers quoted in prose come from here, never typed into the manuscript.
+
+$(VALUES): $(LEDGER) $(RESULT_JSON) | $(BUILD)
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_macros.py" emit $(LEDGER) \
+	        --out $@ --lock $(LOCK)
+
+# --- manuscript --------------------------------------------------------
+
+$(PDF): $(MAIN) $(VALUES) $(TABLES) $(FIGURES) $(BIB) | $(BUILD)
+	latexmk -pdf -interaction=nonstopmode -halt-on-error \
+	        -outdir=$(BUILD) $(MAIN)
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+# --- gates -------------------------------------------------------------
+# Integrity checks, not compilation. `make check` is what the draft-paper
+# exit gate runs.
+
+check: $(PDF)
+	@# Stamp before auditing. Everything above was just built from source, so
+	@# this is the one moment the script/output pairing is known good, and the
+	@# audit's staleness question is about *other* moments: a session that
+	@# edited a script without rerunning it, or a fresh clone. `verify` runs
+	@# distclean first, which is what makes the pairing recorded here honest.
+	$(PYTHON) "$(SKILLS)/script-registry/scripts/registry.py" stamp \
+	        --registry $(REGISTRY)
+	$(PYTHON) "$(SKILLS)/script-registry/scripts/registry.py" audit \
+	        --registry $(REGISTRY) --dirs $(SCRIPTS) $(ANALYSIS)
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_ledger.py" validate $(LEDGER)
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_ledger.py" cross-ref $(LEDGER) \
+	        --registry $(REGISTRY)
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_macros.py" emit $(LEDGER) \
+	        --out $(VALUES) --lock $(LOCK) --fail-on-change
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_macros.py" check $(LEDGER) \
+	        --tex $(MAIN) --values $(VALUES) --generated $(TABLES)
+
+# The claim the pipeline makes about itself: from source alone, everything
+# rebuilds and every gate still passes.
+#
+# distclean, not clean. `clean` empties $(BUILD) but leaves the results JSON,
+# and Make rebuilds a target only when a prerequisite is strictly newer, so a
+# script edited within the same second, or a fresh clone where git gave every
+# file the checkout time, leaves the old results in place and `verify` passes
+# without re-deriving anything. Deleting the results is what makes the claim
+# true. Estimation is minutes; the hours-long work is data collection, which
+# is outside this graph by design.
+verify: distclean all check
+
+# Accept the current numbers as the baseline `check` compares against. This
+# is a person's decision after reading the diff, which is why the build
+# never does it: a rebuild that accepted the numbers it just changed would
+# leave nothing for the gate to catch.
+accept: $(VALUES)
+	$(PYTHON) "$(SKILLS)/claim-ledger/scripts/claim_macros.py" accept $(LEDGER) \
+	        --out $(VALUES) --lock $(LOCK)
+
+clean:
+	rm -rf $(BUILD)
+
+# distclean also drops estimation results. It does NOT touch $(PROCESSED):
+# re-collecting data is not part of a paper rebuild.
+distclean: clean
+	rm -f $(RESULT_JSON)
+
+# --- data boundary -----------------------------------------------------
+# Extracts are source. If one is missing, say so rather than starting a
+# multi-hour crawl inside a paper build.
+
+$(PROCESSED)/%.csv:
+	@echo "missing extract: $@" >&2
+	@echo "the paper build does not collect data; run the collection step" >&2
+	@echo "(data-pipeline skill), then re-run make." >&2
+	@exit 1

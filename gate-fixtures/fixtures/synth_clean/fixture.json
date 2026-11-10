@@ -1,0 +1,17 @@
+{
+  "gate": "synthetic-first (planted-effect recovery)",
+  "defect_class": "none (negative control: a real recovery must pass)",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/synthetic_check.py",
+    "--recovery",
+    "synthetic_recovery.json"
+  ],
+  "must_mention": [
+    "synthetic-first OK"
+  ],
+  "must_not_mention": [
+    "FAIL"
+  ]
+}

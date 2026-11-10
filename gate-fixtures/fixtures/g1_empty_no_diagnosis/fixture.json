@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "undiagnosed empty slate (calibration-blocked read as contribution-thin)",
+  "expect": "fail",
+  "must_mention": [
+    "is not the same finding as"
+  ]
+}

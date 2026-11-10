@@ -1,0 +1,5 @@
+"""Estimate the uniformly weighted ATT."""
+import json
+
+# Uniform weights over supported cells; see prereg block 2.
+json.dump({"did": {"att_uniform": 1.589}}, open("results.json", "w"))

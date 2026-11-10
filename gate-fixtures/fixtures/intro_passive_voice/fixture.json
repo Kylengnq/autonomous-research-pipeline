@@ -1,0 +1,14 @@
+{
+  "gate": "Introduction formula",
+  "cmd": [
+    "{python}",
+    "{checkers}/intro_check.py",
+    "--intro",
+    "introduction.md"
+  ],
+  "defect_class": "passive voice in the introduction",
+  "expect": "fail",
+  "must_mention": [
+    "active voice"
+  ]
+}

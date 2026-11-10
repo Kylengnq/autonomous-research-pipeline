@@ -1,0 +1,14 @@
+{
+  "gate": "Introduction formula",
+  "cmd": [
+    "{python}",
+    "{checkers}/intro_check.py",
+    "--intro",
+    "introduction.md"
+  ],
+  "defect_class": "explicit criticism of prior literature",
+  "expect": "fail",
+  "must_mention": [
+    "build on"
+  ]
+}

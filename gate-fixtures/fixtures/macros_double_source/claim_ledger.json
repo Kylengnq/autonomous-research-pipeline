@@ -1,0 +1,13 @@
+[
+  {
+    "id": "M1",
+    "claim": "The uniformly weighted ATT is 1.589.",
+    "location": "sec:results",
+    "mechanism_check": "Uniform average over the 12 supported cohort-time cells.",
+    "results_file": "results.json",
+    "results_key": "did.att_uniform",
+    "reported_value": 1.589,
+    "macro": "attuniform",
+    "precision": 3
+  }
+]

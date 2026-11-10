@@ -1,0 +1,22 @@
+{
+  "gate": "review rendering (gate documents delivered as PDF)",
+  "defect_class": "none (negative control: a fresh, correctly named packet must pass)",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/review_render_check.py",
+    "--checkpoint",
+    "checkpoint.md",
+    "--packet",
+    "G1_review.pdf",
+    "--sources",
+    "comparative_final.md",
+    "data_requests.md"
+  ],
+  "must_mention": [
+    "review rendering OK"
+  ],
+  "must_not_mention": [
+    "FAIL"
+  ]
+}

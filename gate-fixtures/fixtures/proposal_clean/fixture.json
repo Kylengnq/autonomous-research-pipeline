@@ -1,0 +1,16 @@
+{
+  "gate": "G1 research proposal",
+  "cmd": [
+    "{python}",
+    "{checkers}/proposal_check.py",
+    "--proposal",
+    "research_proposal.md",
+    "--tier",
+    "slate"
+  ],
+  "defect_class": "-",
+  "expect": "pass",
+  "must_mention": [
+    "7 sections in order"
+  ]
+}

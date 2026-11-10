@@ -1,0 +1,20 @@
+{
+  "gate": "review rendering (gate documents delivered as PDF)",
+  "defect_class": "a source changed after the packet was rendered",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/review_render_check.py",
+    "--checkpoint",
+    "checkpoint.md",
+    "--packet",
+    "G1_review.pdf",
+    "--sources",
+    "comparative_final.md",
+    "data_requests.md"
+  ],
+  "must_mention": [
+    "stale",
+    "data_requests.md"
+  ]
+}

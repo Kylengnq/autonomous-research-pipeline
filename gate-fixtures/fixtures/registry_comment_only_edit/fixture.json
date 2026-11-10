@@ -1,0 +1,17 @@
+{
+  "gate": "script-registry audit",
+  "defect_class": "-",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{skills}/script-registry/scripts/registry.py",
+    "audit",
+    "--registry",
+    "script_registry.json",
+    "--dirs",
+    "scripts"
+  ],
+  "must_not_mention": [
+    "stale output"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "gate": "quarantine check",
+  "defect_class": "clean-room breach (downstream artifact names a quarantine/ path)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/quarantine_check.py",
+    "--root",
+    "ideas"
+  ],
+  "must_mention": [
+    "path leak"
+  ]
+}

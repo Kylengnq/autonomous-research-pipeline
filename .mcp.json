@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "corbis": {
+      "command": "python3",
+      "args": ["tools/free_corbis_mcp.py"]
+    }
+  }
+}

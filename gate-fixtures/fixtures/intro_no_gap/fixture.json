@@ -1,0 +1,14 @@
+{
+  "gate": "Introduction formula",
+  "cmd": [
+    "{python}",
+    "{checkers}/intro_check.py",
+    "--intro",
+    "introduction.md"
+  ],
+  "defect_class": "paragraph 1 never states the knowledge gap",
+  "expect": "fail",
+  "must_mention": [
+    "most-omitted sentence"
+  ]
+}

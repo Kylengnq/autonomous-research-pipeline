@@ -1,0 +1,15 @@
+[
+  {
+    "script": "scripts/estimate.py",
+    "purpose": "Estimate the uniformly weighted ATT.",
+    "inputs": [
+      "panel.csv"
+    ],
+    "outputs": [
+      "results.json"
+    ],
+    "packages": [],
+    "loc": 4,
+    "todos": 0
+  }
+]

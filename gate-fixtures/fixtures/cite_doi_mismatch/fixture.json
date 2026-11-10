@@ -1,0 +1,17 @@
+{
+  "gate": "citation verification",
+  "defect_class": "DOI resolves to a different paper than the entry describes",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/citation_check.py",
+    "--entries",
+    "entries.json",
+    "--draft",
+    "draft.tex"
+  ],
+  "must_mention": [
+    "DOI mismatch",
+    "ederington1993"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "gate": "Run ledger",
+  "cmd": [
+    "{python}",
+    "{skills}/run-ledger/scripts/build_ledger.py",
+    "--project",
+    "proj",
+    "--final"
+  ],
+  "defect_class": "queue rows never reconciled into the human time log",
+  "expect": "fail",
+  "must_mention": [
+    "finalize-compliance"
+  ]
+}

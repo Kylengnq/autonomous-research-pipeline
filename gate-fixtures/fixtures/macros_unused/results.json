@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "seed": 20260515,
+    "reference": {
+      "formula": "mean over supported (g,t) of ATT(g,t)",
+      "value": 1.589
+    }
+  },
+  "did": {
+    "att_uniform": 1.589,
+    "n_obs": 800
+  }
+}

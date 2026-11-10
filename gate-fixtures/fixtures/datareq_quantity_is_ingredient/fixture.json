@@ -1,0 +1,14 @@
+{
+  "gate": "Data request",
+  "cmd": [
+    "{python}",
+    "{checkers}/data_request_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "defect_class": "quantity phrased as an ingredient rather than a measurement",
+  "expect": "fail",
+  "must_mention": [
+    "shopping for the wrong thing"
+  ]
+}

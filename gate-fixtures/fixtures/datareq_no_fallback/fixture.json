@@ -1,0 +1,14 @@
+{
+  "gate": "Data request",
+  "cmd": [
+    "{python}",
+    "{checkers}/data_request_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "defect_class": "required request with no fallback (a data purchase in disguise)",
+  "expect": "fail",
+  "must_mention": [
+    "blocked registry"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "gate": "manual-first reference (synthetic-first)",
+  "defect_class": "package default (a clean-running call computes a different estimand)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/estimand_check.py",
+    "--reference",
+    "reference.json",
+    "--package",
+    "package.json"
+  ],
+  "must_mention": [
+    "hand-derived reference",
+    "group size"
+  ]
+}

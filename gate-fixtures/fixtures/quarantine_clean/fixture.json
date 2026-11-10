@@ -1,0 +1,14 @@
+{
+  "gate": "quarantine check",
+  "defect_class": "-",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/quarantine_check.py",
+    "--root",
+    "ideas"
+  ],
+  "must_mention": [
+    "quarantine OK"
+  ]
+}

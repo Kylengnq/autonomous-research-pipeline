@@ -1,0 +1,14 @@
+{
+  "gate": "Introduction formula",
+  "cmd": [
+    "{python}",
+    "{checkers}/intro_check.py",
+    "--intro",
+    "introduction.md"
+  ],
+  "defect_class": "what the paper does slips past paragraph 2",
+  "expect": "fail",
+  "must_mention": [
+    "most common structural failure"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "fallthrough cards precede the `no card cleared` line",
+  "expect": "fail",
+  "must_mention": [
+    "appears BEFORE"
+  ]
+}

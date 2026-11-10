@@ -1,0 +1,12 @@
+{
+  "macros": {
+    "attuniform": {
+      "id": "M1",
+      "value": 1.667,
+      "text": "1.667",
+      "rendered": "\\num{1.667}",
+      "results_file": "results.json",
+      "results_key": "did.att_uniform"
+    }
+  }
+}

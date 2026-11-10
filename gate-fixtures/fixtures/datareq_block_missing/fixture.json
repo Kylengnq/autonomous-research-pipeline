@@ -1,0 +1,14 @@
+{
+  "gate": "Data request",
+  "cmd": [
+    "{python}",
+    "{checkers}/data_request_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "defect_class": "pilot report carries no data_request block",
+  "expect": "fail",
+  "must_mention": [
+    "alive but data-hungry"
+  ]
+}

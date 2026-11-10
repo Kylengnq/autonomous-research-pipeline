@@ -1,0 +1,14 @@
+{
+  "gate": "Data request",
+  "cmd": [
+    "{python}",
+    "{checkers}/data_request_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "defect_class": "expected match rate presented as a verified probe",
+  "expect": "fail",
+  "must_mention": [
+    "expectation presented as a measurement"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "gate": "citation verification",
+  "defect_class": "an entry carrying a Material Gap is cited anyway",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/citation_check.py",
+    "--entries",
+    "entries.json",
+    "--draft",
+    "draft.tex"
+  ],
+  "must_mention": [
+    "MATERIAL GAP"
+  ]
+}

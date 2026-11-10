@@ -1,0 +1,14 @@
+{
+  "gate": "G1 acceptance",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_acceptance_check.py",
+    "--record",
+    "g1_acceptance.md"
+  ],
+  "defect_class": "fallthrough card carried forward with no reason_for_proceeding",
+  "expect": "fail",
+  "must_mention": [
+    "always-returns-items"
+  ]
+}

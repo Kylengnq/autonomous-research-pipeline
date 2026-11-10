@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Held data is never committed: it is large and it is usually not ours to
+# redistribute. The manifest IS committed, because it carries the licence and
+# refresh declarations the data-profile stage refuses to run without.
+data/*
+!data/held_data_manifest.md
+!data/.gitkeep
+
+# Generated. Rebuilt by `make` from source. The directory itself is kept, because
+# a config key names it and a cloner should not have to create it.
+build/*
+!build/.gitkeep
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+
+# Rendered reading copies regenerate from their markdown.
+submission/*.pdf

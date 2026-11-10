@@ -1,0 +1,17 @@
+{
+  "gate": "script-registry audit",
+  "defect_class": "stale output (script's code changed, output never rerun)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/script-registry/scripts/registry.py",
+    "audit",
+    "--registry",
+    "script_registry.json",
+    "--dirs",
+    "scripts"
+  ],
+  "must_mention": [
+    "stale output"
+  ]
+}

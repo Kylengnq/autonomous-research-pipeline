@@ -1,0 +1,18 @@
+{
+  "gate": "script-registry audit",
+  "defect_class": "-",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{skills}/script-registry/scripts/registry.py",
+    "audit",
+    "--registry",
+    "script_registry.json",
+    "--dirs",
+    "scripts"
+  ],
+  "must_mention": [
+    "no docstring: scripts/rescale.py",
+    "TODO/FIXME in scripts/rescale.py"
+  ]
+}

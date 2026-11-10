@@ -1,0 +1,12 @@
+[
+  {
+    "id": "C2",
+    "claim": "The uniformly weighted ATT is 1.589.",
+    "location": "sec:results, Table 2 col 1",
+    "mechanism_check": "   ",
+    "results_file": "results.json",
+    "results_key": "did.att_uniform",
+    "reported_value": 1.589,
+    "tolerance": 0.001
+  }
+]

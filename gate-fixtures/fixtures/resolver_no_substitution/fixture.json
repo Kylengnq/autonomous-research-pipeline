@@ -1,0 +1,10 @@
+{
+  "gate": "journal-name resolution",
+  "defect_class": "-",
+  "expect": "pass",
+  "requires": "network",
+  "cmd": ["{python}", "{checkers}/source_resolver_check.py",
+          "--tools-root", "{tools}", "--expect", "expect.json"],
+  "must_mention": ["resolver OK"],
+  "must_not_mention": ["International Review"]
+}

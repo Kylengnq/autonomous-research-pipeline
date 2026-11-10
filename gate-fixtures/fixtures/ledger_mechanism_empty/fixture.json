@@ -1,0 +1,14 @@
+{
+  "gate": "claim-ledger validate",
+  "defect_class": "unmechanised claim (number traces, meaning does not)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_ledger.py",
+    "validate",
+    "claim_ledger.json"
+  ],
+  "must_mention": [
+    "empty mechanism_check"
+  ]
+}

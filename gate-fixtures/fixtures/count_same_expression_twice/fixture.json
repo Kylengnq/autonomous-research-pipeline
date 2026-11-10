@@ -1,0 +1,14 @@
+{
+  "gate": "counting definition",
+  "defect_class": "false corroboration (the recount reruns the same expression)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/count_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "must_mention": [
+    "same expression run twice"
+  ]
+}

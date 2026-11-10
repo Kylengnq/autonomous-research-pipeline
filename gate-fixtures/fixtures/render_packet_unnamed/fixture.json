@@ -1,0 +1,19 @@
+{
+  "gate": "review rendering (gate documents delivered as PDF)",
+  "defect_class": "the packet exists but the checkpoint never names it",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/review_render_check.py",
+    "--checkpoint",
+    "checkpoint.md",
+    "--packet",
+    "G1_review.pdf",
+    "--sources",
+    "comparative_final.md",
+    "data_requests.md"
+  ],
+  "must_mention": [
+    "never names"
+  ]
+}

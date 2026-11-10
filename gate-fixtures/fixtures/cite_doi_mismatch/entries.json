@@ -1,0 +1,16 @@
+{
+  "bernile2016": {
+    "title": "Can Information Be Locked Up? Informed Trading Ahead of Macro-News Announcements",
+    "doi": "10.1016/j.jfineco.2015.05.006",
+    "resolved_title": "Can Information Be Locked Up? Informed Trading Ahead of Macro-News Announcements",
+    "verified": true,
+    "source_query": "openalex: title.search=Can Information Be Locked Up informed trading"
+  },
+  "ederington1993": {
+    "title": "How Markets Process Information: News Releases and Volatility",
+    "doi": "10.1111/j.1540-6261.1993.tb05127.x",
+    "resolved_title": "The Short-Run Dynamics of the Price Adjustment to New Information",
+    "verified": true,
+    "source_query": "openalex: doi=10.1111/j.1540-6261.1993.tb05127.x"
+  }
+}

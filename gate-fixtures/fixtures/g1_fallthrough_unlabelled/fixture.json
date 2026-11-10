@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "fallthrough cards carry no `tier` label, so they read as slate items",
+  "expect": "fail",
+  "must_mention": [
+    "no card is filed in the tier"
+  ]
+}

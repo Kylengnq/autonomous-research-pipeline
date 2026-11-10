@@ -1,0 +1,15 @@
+{
+  "gate": "Run ledger",
+  "cmd": [
+    "{python}",
+    "{skills}/run-ledger/scripts/build_ledger.py",
+    "--project",
+    "proj",
+    "--final"
+  ],
+  "defect_class": "-",
+  "expect": "pass",
+  "must_mention": [
+    "package complete"
+  ]
+}

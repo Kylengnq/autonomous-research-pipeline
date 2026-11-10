@@ -1,0 +1,15 @@
+{
+  "gate": "synthetic-first (planted-effect recovery)",
+  "defect_class": "recovery log missing the seed, so the run is not reproducible",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/synthetic_check.py",
+    "--recovery",
+    "synthetic_recovery.json"
+  ],
+  "must_mention": [
+    "missing",
+    "seed"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+ "scripts": [
+  {
+   "path": "scripts/build_panel.py",
+   "outputs": [
+    "data/panel.csv"
+   ]
+  }
+ ]
+}

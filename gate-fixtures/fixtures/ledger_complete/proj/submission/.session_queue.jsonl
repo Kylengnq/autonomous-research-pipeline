@@ -1,0 +1,2 @@
+{"session_id": "aaaa1111-0000-0000-0000-000000000000", "date": "2026-08-10", "wallclock_min": 45, "conv_file": "submission/conversations/2026-08-10_s1.md", "git_head": "abc123def456", "finalized": true}
+{"session_id": "bbbb2222-0000-0000-0000-000000000000", "date": "2026-08-11", "wallclock_min": 45, "conv_file": "submission/conversations/2026-08-11_s2.md", "git_head": "abc123def456", "finalized": true}

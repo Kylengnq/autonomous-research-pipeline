@@ -1,0 +1,17 @@
+{
+  "gate": "script-registry audit",
+  "defect_class": "unregistered script (code on disk that no manifest declares)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/script-registry/scripts/registry.py",
+    "audit",
+    "--registry",
+    "script_registry.json",
+    "--dirs",
+    "scripts"
+  ],
+  "must_mention": [
+    "unregistered script"
+  ]
+}

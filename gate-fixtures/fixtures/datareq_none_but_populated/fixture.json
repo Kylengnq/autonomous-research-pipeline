@@ -1,0 +1,14 @@
+{
+  "gate": "Data request",
+  "cmd": [
+    "{python}",
+    "{checkers}/data_request_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "defect_class": "status none with a populated request",
+  "expect": "fail",
+  "must_mention": [
+    "say nothing or say what you need"
+  ]
+}

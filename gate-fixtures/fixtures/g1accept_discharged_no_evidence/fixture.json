@@ -1,0 +1,14 @@
+{
+  "gate": "G1 acceptance",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_acceptance_check.py",
+    "--record",
+    "g1_acceptance.md"
+  ],
+  "defect_class": "objection discharged with nothing named as having answered it",
+  "expect": "fail",
+  "must_mention": [
+    "has to be nameable"
+  ]
+}

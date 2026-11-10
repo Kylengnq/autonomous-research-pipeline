@@ -1,0 +1,16 @@
+{
+  "gate": "G1 research proposal",
+  "cmd": [
+    "{python}",
+    "{checkers}/proposal_check.py",
+    "--proposal",
+    "research_proposal.md",
+    "--tier",
+    "fallthrough"
+  ],
+  "defect_class": "fallthrough proposal with no did-not-clear line",
+  "expect": "fail",
+  "must_mention": [
+    "launder a capped card"
+  ]
+}

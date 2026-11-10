@@ -1,0 +1,15 @@
+{
+  "gate": "Run ledger",
+  "cmd": [
+    "{python}",
+    "{skills}/run-ledger/scripts/build_ledger.py",
+    "--project",
+    "proj",
+    "--final"
+  ],
+  "defect_class": "a session in the queue whose transcript was never written",
+  "expect": "fail",
+  "must_mention": [
+    "with no transcript"
+  ]
+}

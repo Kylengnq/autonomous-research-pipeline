@@ -1,0 +1,14 @@
+{
+  "gate": "counting definition",
+  "defect_class": "unblocked terminal count (two derivations disagree)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/count_check.py",
+    "--report",
+    "pilot_report.md"
+  ],
+  "must_mention": [
+    "disagree"
+  ]
+}

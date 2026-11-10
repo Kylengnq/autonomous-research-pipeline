@@ -1,0 +1,15 @@
+{
+  "gate": "synthetic-first (planted-effect recovery)",
+  "defect_class": "tolerance as wide as the effect, so recovery is indistinguishable from failure",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/synthetic_check.py",
+    "--recovery",
+    "synthetic_recovery.json"
+  ],
+  "must_mention": [
+    "tolerance",
+    "admits zero"
+  ]
+}

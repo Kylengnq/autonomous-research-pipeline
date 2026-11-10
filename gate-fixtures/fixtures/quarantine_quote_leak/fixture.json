@@ -1,0 +1,14 @@
+{
+  "gate": "quarantine check",
+  "defect_class": "clean-room breach (advocacy copied across the wall without naming the path)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/quarantine_check.py",
+    "--root",
+    "ideas"
+  ],
+  "must_mention": [
+    "quote leak"
+  ]
+}

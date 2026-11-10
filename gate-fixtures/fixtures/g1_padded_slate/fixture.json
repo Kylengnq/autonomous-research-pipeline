@@ -1,0 +1,14 @@
+{
+  "gate": "G1 threshold",
+  "cmd": [
+    "{python}",
+    "{checkers}/g1_slate_check.py",
+    "--report",
+    "comparative_final.md"
+  ],
+  "defect_class": "padded slate (count exceeds the cards that cleared)",
+  "expect": "fail",
+  "must_mention": [
+    "padded to a count"
+  ]
+}

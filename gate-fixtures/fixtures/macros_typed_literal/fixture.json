@@ -1,0 +1,16 @@
+{
+  "gate": "generated values (claim_macros check)",
+  "defect_class": "hard-coded output (a macro-backed number also typed in prose)",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{skills}/claim-ledger/scripts/claim_macros.py",
+    "check",
+    "claim_ledger.json",
+    "--tex",
+    "paper.tex"
+  ],
+  "must_mention": [
+    "duplicates"
+  ]
+}

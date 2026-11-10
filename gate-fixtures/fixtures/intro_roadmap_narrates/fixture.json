@@ -1,0 +1,14 @@
+{
+  "gate": "Introduction formula",
+  "cmd": [
+    "{python}",
+    "{checkers}/intro_check.py",
+    "--intro",
+    "introduction.md"
+  ],
+  "defect_class": "a surviving roadmap narrating the paper section by section",
+  "expect": "fail",
+  "must_mention": [
+    "never narrate section by section"
+  ]
+}
