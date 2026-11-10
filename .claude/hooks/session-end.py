@@ -15,20 +15,23 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# Venue eligibility floor: no session dated before this may be logged.
-# The default admits everything. Set it to the date your call declares, and
-# keep it identical across all three hooks.
-ELIGIBILITY_FLOOR = datetime(1970, 1, 1, tzinfo=timezone.utc).date()
+AFA_CUTOFF = datetime(2026, 6, 1, tzinfo=timezone.utc).date()
 
 
-def resolve_project_dir() -> Path:
-    """Prefer CLAUDE_PROJECT_DIR only when it contains a submission/ package; otherwise fall
-    back to the root inferred from this hook's own path. Guards against CLAUDE_PROJECT_DIR
-    pointing at a parent directory, which silently breaks logging."""
-    env = os.environ.get("CLAUDE_PROJECT_DIR")
-    if env and (Path(env) / "submission").is_dir():
-        return Path(env)
-    return Path(__file__).resolve().parents[2]
+def resolve_project_dir():
+    """Delegate to project_root.py, which handles both layouts and refuses to
+    guess when a session root holds more than one paper project. Falls back to
+    the old inference if that module is missing, so a hook never dies on an
+    import."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from project_root import resolve_or_none
+        return resolve_or_none(__file__)
+    except Exception:
+        env = os.environ.get("CLAUDE_PROJECT_DIR")
+        if env and (Path(env) / "submission").is_dir():
+            return Path(env)
+        return Path(__file__).resolve().parents[2]
 
 
 def git_head_from_sentinel(sentinel: Path) -> str:
@@ -50,8 +53,10 @@ def main() -> None:
 
     session_id = str(data.get("session_id", "unknown"))
     project_dir = resolve_project_dir()
+    if project_dir is None:
+        return  # resolution said why on stderr
 
-    if datetime.now(timezone.utc).date() < ELIGIBILITY_FLOOR:
+    if datetime.now(timezone.utc).date() < AFA_CUTOFF:
         return
     if (project_dir / ".no-session-logging").exists():
         return

@@ -1,0 +1,21 @@
+{
+  "gate": "hook target (the contribution hooks write to one paper or none)",
+  "defect_class": "none (negative control: one configured paper must be found)",
+  "expect": "pass",
+  "cmd": [
+    "{python}",
+    "{checkers}/hook_target_check.py",
+    "--root",
+    "root",
+    "--expect",
+    "one",
+    "--name",
+    "my-paper"
+  ],
+  "must_mention": [
+    "hook target OK"
+  ],
+  "must_not_mention": [
+    "FAIL"
+  ]
+}

@@ -86,7 +86,7 @@ point back up at this bundle, so keep the project inside it or set absolute path
 
 ## 4. The submission rail, if you need it
 
-`project-template/submission/` and the three hooks in `project-template/.claude/`
+`project-template/submission/` and the three hooks in `.claude/hooks/`
 record how much of the work was AI-driven: transcripts, subagent exports, human
 time, gate decisions. Use it when a venue asks for that record; delete the
 directory when it does not.
@@ -100,26 +100,28 @@ Two things to set first:
   call before `/init-submission` runs; several skills read it.
   Replace it with your own; the compliance skills read the floor and deadline from it.
 
-**Known limitation: you cannot have both the skills and the hooks in one
-session.** The hooks register only when the project folder is the session's own
-directory. The skills and the search backend load only from this bundle's root,
-because that is where `.claude/skills/` lives and where `.mcp.json` resolves its
-relative path. Those are different directories, so:
+Launch Claude Code from the repository root, the same place you run everything
+else from. The hooks register from `.claude/settings.json` there, and
+`.claude/hooks/project_root.py` finds the paper project underneath.
 
-- Launch from the bundle root and you get all 41 skills and the search backend.
-  The hooks never register, so nothing is recorded, and nothing errors.
-- Launch from the project folder and the hooks record correctly. You lose the
-  skills and the backend, which several skills refuse to run without.
+It resolves one of three ways, and you can ask it which:
 
-The hooks themselves handle either case: `resolve_project_dir` finds the
-project from its own path rather than trusting `CLAUDE_PROJECT_DIR`. The
-constraint is Claude Code's hook registration, which is per session root.
+```bash
+python3 .claude/hooks/project_root.py --doctor
+```
 
-Until this is resolved, run the pipeline from the bundle root and maintain the
-contribution record deliberately: `/log-conversation` and `/log-human-time` write
-the same files the hooks would, and `/finalize-compliance` reconciles them. The
-record is then as complete, and you are the one keeping it current rather than
-the hooks. Do not assume a silent hook is a working one.
+- **One configured paper under the root.** It records to that one. This is the
+  normal case and needs nothing from you.
+- **No configured paper yet.** It records nothing, which is correct on a fresh
+  clone. The shipped `project-template/` does not count as a paper, and neither
+  does a copy of it whose `project_name` is still the placeholder.
+- **More than one configured paper.** It refuses and says so rather than
+  guessing, because filing one project's transcripts into another's record is
+  worse than filing none. Keep one paper per clone, or set `CLAUDE_PROJECT_DIR`
+  to the one you mean.
+
+A paper project whose own directory is the session root also works, which is the
+other layout the resolver handles.
 
 ## Troubleshooting
 

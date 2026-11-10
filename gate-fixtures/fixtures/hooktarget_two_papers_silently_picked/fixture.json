@@ -1,0 +1,18 @@
+{
+  "gate": "hook target (the contribution hooks write to one paper or none)",
+  "defect_class": "the resolver picks one of several papers instead of refusing",
+  "expect": "fail",
+  "cmd": [
+    "{python}",
+    "{checkers}/hook_target_check.py",
+    "--root",
+    "root",
+    "--expect",
+    "one",
+    "--name",
+    "paper-a"
+  ],
+  "must_mention": [
+    "expected one paper"
+  ]
+}

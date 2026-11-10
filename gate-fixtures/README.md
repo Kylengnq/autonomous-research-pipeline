@@ -283,3 +283,16 @@ nothing plants a `.bib` entry whose metadata contradicts the paper it claims. It
 is the one remaining unfixtured gate that would put a defect **into the paper**
 rather than into a decision. Due before S7 runs, not before the run starts.
 Synthetic-first's remaining half (planted-effect recovery) is second.
+
+**Added**, second set: five `hooktarget_*` fixtures and
+`hook_target_check.py`. The gate is which paper project the contribution hooks
+write to. The hooks used to sit beside the paper while the skills sat at the
+repository root, and Claude Code resolves both from the session root, so a
+session could satisfy one or the other and never both. Launching from the root
+recorded nothing and said nothing. The hooks moved to the root and now find the
+paper underneath, which introduces the opposite hazard: with two papers under
+one root, a guess files one project's transcripts into another's record. Three
+of the five fixtures are negative controls and one asserts the refusal names its
+reason. The checker's own first draft passed the no-paper case for the wrong
+reason, because a resolver that crashed looked identical to a resolver that
+found nothing; it now separates the two.
