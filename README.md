@@ -199,18 +199,6 @@ change; measure your own.
 A full run asks for six author prompts or fewer, and zero in autonomous mode.
 That number, not the dollar figure, is the one the design optimises.
 
-## What is not in here
-
-**The writing and voice layer is not part of this release.** The pipeline drafts
-and audits prose against general house norms
-([`references/writing-norms.md`](references/writing-norms.md) and
-[`references/banned-words.md`](references/banned-words.md)), and that is enough
-to get clean, plain, publishable prose. It is not enough to make a draft read
-like a specific author, and the layer that does that, a voice profile, measured
-phrase frequencies, per-section word banks and a cold-reader scoring loop, stays
-private. The seam is a config key: set `writing_hub` in `pipeline-config.md` to a
-directory holding your own pack and the writing skills load it. Leave it empty
-and they fall back to the norms files. Nothing breaks either way.
 
 **Scope.** Built for archival empirical work in economics, finance and
 econometrics: panels, event studies, difference-in-differences, instrumental
