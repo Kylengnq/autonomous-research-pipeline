@@ -205,18 +205,6 @@ a finance set, so it will mis-score an idea from another field.
 set used for idea scoring, including the construct it substitutes for and the
 gaps it carries.
 
-## Known issues
-
-**A first cold run of this repository stopped before G1** and produced the fixes
-in it. Four funnel skills carried `disable-model-invocation: true`, which made
-them unreachable by `/run-pipeline`, the entry point this README advertises.
-That is fixed, and `gate-fixtures/` now carries a reachability check so it
-cannot recur silently. The same run found that the skills and the submission
-hooks could not both load in one session, because they resolved from different
-directories and the failure was silent; the hooks now live at the repository
-root and find the paper project underneath, with five fixtures covering the
-cases. The run reached S0 and stopped at S1, so a full funnel run to G1 has
-still not been completed against this published tree.
 
 ## Layout
 
