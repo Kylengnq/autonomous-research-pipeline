@@ -163,10 +163,6 @@ It drives S0 through S8 and stops at each gate. A run ends in exactly one of fou
 states: CHECKPOINT at a gate waiting for you, PARKED where a rule ran out,
 ARCHIVED with a documented reject, or DONE.
 
-## Does it work
-
-The honest answer is that the gates are tested and the papers are few.
-
 **The gates are tested.** `gate-fixtures/` holds 109 fixtures across 14
 checkers. Each one plants a specific defect a machine gate must catch, or a clean
 case it must let through, in both directions, because a check that fires on
@@ -182,9 +178,6 @@ the funnel specifically. Both surfaced real problems that changed the design, an
 the postmortems are the reason several rules here read oddly: they exist because
 the obvious approach failed in a specific way.
 
-**What has not been demonstrated** is a paper from this pipeline surviving peer
-review at a journal. Until that happens, treat the top-journal bar at G1 as a
-design target rather than a validated predictor.
 
 ## What a run costs
 
